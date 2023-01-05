@@ -26,5 +26,5 @@ See [https://www.npmjs.com/package/laoban](laoban) documentation
 
 # Making your own 'inits'
 At the moment it is still extremely experimental. It works for the default inits. It needs some work to make
-it more suitable for general use. The [documentation is here](Inits.md)
+it more suitable for general use. The [documentation is here](customInits.md)
 
