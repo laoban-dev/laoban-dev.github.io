@@ -1,10 +1,17 @@
 # Laoban documentation
 
 ## Installation
-`npm -i -g laoban@latest`
+
+`npm -i -g @laoban/admin@latest`
 (This install `laoban` as well)
-`
+
+## Where is the code?`
+* 
 * [NPMJS site](https://www.npmjs.com/package/laoban)
+* [Github site](https://github.com/laoban-github/laoban)
+
+## Laoban documentation
+
 * [Cheat Sheet](laoban/CHEATSHEET.md)
 * [Laoban and Yarn](laoban/YARN.md)
 * [laoban.json](laoban/LAOBAN.JSON.md)
