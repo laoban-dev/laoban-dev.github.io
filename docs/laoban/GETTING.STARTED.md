@@ -13,10 +13,11 @@ Install and use [`laoban-admin`](https://www.npmjs.com/package/@laoban/admin)
 
 # The 'do it yourself way'
 
+It is almost always better to use [`laoban-admin`](https://www.npmjs.com/package/@laoban/admin) but if you want to do it yourself then follow these steps.
+
 ## Setting up `laoban.json`
 Details of this file can be found [here](LAOBAN.JSON.md). If you are working with typescript and using yarn
 a reasonable start is 
-
 ```json
 {
   "packageManager": "yarn",
@@ -27,3 +28,40 @@ a reasonable start is
   ]}
 ```
 
+## Setting up `project.details.json`
+
+Each project (a directory with a package.json) needs a `project.details.json` file. This file is used (among other things) to 
+describe your project:
+* what 'type' of project it is (the template)
+* what extra dependancies it has that are not in the template
+
+Example:
+```json
+{
+  "template"   : "typescript",
+  "name"       : "laoban",
+  "description": "A cli for managing projects that have many npm packages",
+  "details"    : {
+    "keywords": ["monorepo","devops"],
+    "links"       : ["@laoban/variables","@laoban/generations", "@laoban/validation", "@laoban/debug","@laoban/files"],
+    "extraDeps"   : {
+      "fs-extra" : "^9.0.1",
+      "commander": "^6.2.0"
+    },
+    "extraDevDeps": {"@types/fs-extra": "^9.0.5"},
+    "extraBins"   : {"laoban": "dist/index.js"},
+    "publish"     : true,
+    "tsc": true,
+    "test": true
+  }
+}
+
+```
+
+## Checking it
+
+* `laoban validate` should show you any problems with the `laoban.json` and project.details.json` files
+* `laoban projects` should show you all the projects
+* `laoban update` will replace the existing package.json files with the ones from the templates
+* `yarn` will install the dependancies
+* `laoban tsc` will compile the typescript

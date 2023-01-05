@@ -13,6 +13,8 @@
 
 ## Laoban documentation
 
+* [Getting starting with a project already managed by `laoban`](https://laoban-github.github.io/laoban/LAOBAN.EXISTING.html)
+* [Getting starting by adding `laoban` to your project](https://laoban-github.github.io/laoban/GETTING.STARTED.html)
 * [Cheat Sheet](laoban/CHEATSHEET.md)
 * [Laoban and Yarn](laoban/YARN.md)
 * [laoban.json](laoban/LAOBAN.JSON.md)

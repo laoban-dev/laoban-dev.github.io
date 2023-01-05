@@ -18,8 +18,8 @@ laoban run 'echo "Hello ${projectDirectory}"'
 This is very useful. I regularly do things like the following
 
 ```shell
-laoban run 'rm -rf node_modules`
-laoban run 'rm -rf target`
+laoban run 'rm -rf node_modules
+laoban run 'rm -rf target' 
 ```
 
 ### Making our first script
