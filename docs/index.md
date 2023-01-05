@@ -5,10 +5,11 @@
 `npm -i -g @laoban/admin@latest`
 (This install `laoban` as well)
 
-## Where is the code?`
-* 
+## Where is the code?
+
 * [NPMJS site](https://www.npmjs.com/package/laoban)
 * [Github site](https://github.com/laoban-github/laoban)
+* [Documentation source](https://github.com/laoban-github/laoban-github.github.io)
 
 ## Laoban documentation
 
