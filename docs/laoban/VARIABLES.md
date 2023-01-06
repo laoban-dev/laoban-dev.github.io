@@ -27,7 +27,7 @@ On my windows machine this gives the following
   "sessionDir": "C:\\git\\laoban\\code\\.session",
   "throttle": 0,
   "os": "Windows_NT",
-  "projectDirectory": "C:\\git\\laoban\\code\\modules\\variables",
+  "packageDirectory": "C:\\git\\laoban\\code\\modules\\variables",
   "projectDetails": {
     "template": "typescript",
     "name": "@laoban/variables",
@@ -40,7 +40,7 @@ On my windows machine this gives the following
 ```
 Legal variables from this include
 ```typescript
- ${projectDirectory}
+ ${packageDirectory}
  ${projectDetails.description}
  ${projectDetails.details.publish}
 ```
@@ -52,7 +52,7 @@ which will fill the screen with details...
 
 ### In the run command
 ```shell
-laoban run 'echo "Hello ${projectDirectory}"' 
+laoban run 'echo "Hello ${packageDirectory}"' 
 laoban run 'echo "Hello ${projectDetails.name} ${projectDetails.description}"' 
 ```
 
@@ -80,7 +80,7 @@ laoban helloWorld -v
 
 The output is
 ```shell
-Raw command is [echo Hello ${projectDirectory}] became [echo Hello C:\git\laoban\code\modules\variables]
+Raw command is [echo Hello ${packageDirectory}] became [echo Hello C:\git\laoban\code\modules\variables]
 legal variables are
 {
   "laobanDirectory": "C:\\git\\laoban\\code",

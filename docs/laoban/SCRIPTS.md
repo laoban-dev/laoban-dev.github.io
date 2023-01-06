@@ -8,11 +8,11 @@ The 'whole point' of `laoban` is to allow scripts to be easily created that will
 ### Using run
 
 Actually you can execute a 'command' in every [project](PACKAGES.md) already. The follow will execute the command in
-quotes in each project. We are using a [variable](VARIABLES.md) `${projectDirectory}` because linux and windows have different ways of finding the current
+quotes in each project. We are using a [variable](VARIABLES.md) `${packageDirectory}` because linux and windows have different ways of finding the current
 directory but the variable works anyway
 
 ```shell
-laoban run 'echo "Hello ${projectDirectory}"' 
+laoban run 'echo "Hello ${packageDirectory}"' 
 ```
 
 This is very useful. I regularly do things like the following
@@ -34,7 +34,7 @@ otherwise add the following
   "scripts": {
     "helloWorld": {
       "description": "Our first script that echos 'hello directory' in each project",
-      "commands":    ["echo Hello ${projectDirectory}"]
+      "commands":    ["echo Hello ${packageDirectory}"]
     }
   }
 }
@@ -51,7 +51,7 @@ section with `laoban helloWorld --help`
 {
   "helloWorld": {
     "description": "Our first script that echos 'hello directory' in each project",
-    "commands":    ["echo Hello ${projectDirectory}"]
+    "commands":    ["echo Hello ${packageDirectory}"]
   }
 }
 ```
