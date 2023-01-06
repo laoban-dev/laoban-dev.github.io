@@ -19,8 +19,8 @@ The debug gives information about what is being loaded, and where from. It's not
 
 The -a means 'in all projects'. Without this laoban looks at the current directory
 
-* If it contains a project.details.json, the command is executed in this directory only
-* If it doesn't contain a project.details.json the command is executed as though -a had been specified
+* If it contains a package.details.json, the command is executed in this directory only
+* If it doesn't contain a package.details.json the command is executed as though -a had been specified
 
 ### options `-p <project>`
 
@@ -53,7 +53,7 @@ Only used when debugging to help work out what are legal [variables](VARIABLES.m
 ### option `-g`
 
 Rather like '-a' in that it does not display any commands. Instead it outputs the 'generation plan': the directories
-that will be processed in parallel. This is descriped [here](PROJECTS.md)
+that will be processed in parallel. This is descriped [here](PACKAGES.md)
 
 ### option `-t xxx`
 

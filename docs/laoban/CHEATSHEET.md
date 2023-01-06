@@ -7,7 +7,7 @@
 
 | Command | Guarded? | Purpose |
 | --- | --- | --- |
-| `laoban update` | No |Used when the version number in `version.txt` has been changed to update the project, and is also used when a project.details.json file is changed 
+| `laoban update` | No |Used when the version number in `version.txt` has been changed to update the project, and is also used when a package.details.json file is changed 
 | `laoban tsc -asl` | details.tsc | Compile all the typescript projects in the correct order 
 | `laoban test -asl` | details.test | Test all the typescript projects in the correct order
 | `laoban publish -asl` | details.publish | Publishes the projects to npm
@@ -22,7 +22,7 @@ with existing projects
 | ---  --- |
 | `laoban-admin projects` | Lists the found projects in the monorepo (with package.json files) and what is the recommended template
 | `laoban-admin init --dryrun` |  Generates 'test' files that allow you to look at them before using them
-| `laoban-admin init --force` |  Sets up your project with `laoban.json` and `project.details.json` that should work
+| `laoban-admin init --force` |  Sets up your project with `laoban.json` and `package.details.json` that should work
 
 
 

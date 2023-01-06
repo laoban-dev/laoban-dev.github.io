@@ -1,13 +1,13 @@
 # Scripts with Laoban
 
-The 'whole point' of `laoban` is to allow scripts to be easily created that will execute for each [project](PROJECTS.md)
+The 'whole point' of `laoban` is to allow scripts to be easily created that will execute for each [project](PACKAGES.md)
 .
 
 ## Getting going
 
 ### Using run
 
-Actually you can execute a 'command' in every [project](PROJECTS.md) already. The follow will execute the command in
+Actually you can execute a 'command' in every [project](PACKAGES.md) already. The follow will execute the command in
 quotes in each project. We are using a [variable](VARIABLES.md) `${projectDirectory}` because linux and windows have different ways of finding the current
 directory but the variable works anyway
 
@@ -150,7 +150,7 @@ guard. The example of ls-ports here:
 
 ```
     "ls-ports"  : {
-      "description": "lists the projects that have a port defined in project.details.json",
+      "description": "lists the projects that have a port defined in package.details.json",
       "guard"      : "${projectDetails.details.port}",
       "commands"   : ["js:process.cwd()"]
     },
@@ -160,14 +160,14 @@ Another good example is
 
 ```
     "start"     : {
-      "description": "${packageManager} start for all projects that have a port defined in project.details.json",
+      "description": "${packageManager} start for all projects that have a port defined in package.details.json",
       "guard"      : "${projectDetails.details.port}",
       "commands"   : ["${packageManager} start"],
       "env"        : {"PORT": "${projectDetails.details.port}"}
     },
 ```
 
-So by setting 'ports' to a numeric value in the  `project.details.json` we have  'marked' the directory in such a way
+So by setting 'ports' to a numeric value in the  `package.details.json` we have  'marked' the directory in such a way
 that executing `laoban start` will start up the project. This lets us spin up multiple react projects at once. It's a
 good idea if all the projects have different ports, but laoban doesn't check this
 

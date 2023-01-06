@@ -27,7 +27,7 @@ Following the instructions for setting up  [workspaces](https://yarnpkg.com/feat
 (default actions: most things are configurable)
 * Have a `package.json` in the root directory that defines the workspaces
 * This is the natural place to put `laoban.json`
-* In each child project add a `project.details.json` and configure it with the name/description and links.
+* In each child project add a `package.details.json` and configure it with the name/description and links.
 * Use `laoban update` to create the `package.json`
 * Type `yarn` to install everything and get the workspaces setup
 * `laoban tsc -asl` will compile everything in the right order

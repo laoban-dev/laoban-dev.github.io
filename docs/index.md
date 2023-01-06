@@ -19,7 +19,7 @@
 * [Laoban and Yarn](laoban/YARN.md)
 * [laoban.json](laoban/LAOBAN.JSON.md)
 * [Logs](laoban/LOGS.md)
-* [Projects](laoban/PROJECTS.md)
+* [Projects](laoban/PACKAGES.md)
 * [Scripts](laoban/SCRIPTS.md)
 * [Templates](laoban/TEMPLATES.md)
 * [Variables](laoban/VARIABLES.md)

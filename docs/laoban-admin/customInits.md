@@ -35,7 +35,7 @@ This has a number of fields, they are all optional
 | `markers` | If this is defined the init can be used|
 |`parents` | Links to parent `inits`
 |`laoban.json` | Json to be added to the `laoban.json` file
-|`project.details.json` | Json to be added to the `project.details.json` file
+|`package.details.json` | Json to be added to the `package.details.json` file
 
 ### Example
 
@@ -52,7 +52,7 @@ This has a number of fields, they are all optional
       "@laoban@/laoban.json/typescript.publish.laoban.json"
     ]
   },
-  "project.details.json": {
+  "package.details.json": {
     "guardfile":     "project.json",
     "variableFiles": {"projectJson": "project.json"},
     "contents":      {

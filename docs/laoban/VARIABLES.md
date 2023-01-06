@@ -60,7 +60,7 @@ laoban run 'echo "Hello ${projectDetails.name} ${projectDetails.description}"'
 An example script showing most uses is here:
 ```json
     {"start"     : {
-      "description": "${packageManager} start for all projects that have a port defined in project.details.json",
+      "description": "${packageManager} start for all projects that have a port defined in package.details.json",
       "guard"      : "${projectDetails.details.port}",
       "commands"   : ["${packageManager} start"],
       "env"        : {"PORT": "${projectDetails.details.port}"}

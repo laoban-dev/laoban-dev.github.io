@@ -6,7 +6,7 @@ The existence of the file marks that this is the root of a 'big project' which i
 
 ## Further documentation
 
-* [Projects](PROJECTS.md)
+* [Projects](PACKAGES.md)
 * [Templates](TEMPLATES.md)
 * [Scripts](SCRIPTS.md)
 

@@ -20,12 +20,12 @@ Either by windows with the 'cmd' or 'powershell' tools, or from your favourite I
 
 Details can be found [here](INSTALLING.LAOBAN.md)
 
-## See how many projects you have
+## See how many packages you have
 
-See [here](PROJECTS.md/#projects) for more details
+See [here](PACKAGES.md/#projects) for more details
 
 ```shell
-laoban projects
+laoban packages
 ```
 
 ## Get all your dependancies

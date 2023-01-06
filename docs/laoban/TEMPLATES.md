@@ -1,6 +1,6 @@
 # Templates
 
-Each [project](PROJECTS.md) has a `template`. This template tells us 'what sort of project it is'. For example we might
+Each [project](PACKAGES.md) has a `template`. This template tells us 'what sort of project it is'. For example we might
 want the following:
 
 * Java projects (for the backend)
@@ -30,9 +30,9 @@ are 'managed' in the template, type `laoban update` and it is the same as editin
 With them it is now trivial to create sub libraries which is great for increasing code quality (libraries typically
 force us to create nice interfaces and decouple our code). Normally this is painful in the javascript ecosystem
 
-## Templates and [project.details.json](PROJECTS.md)
+## Templates and [package.details.json](PACKAGES.md)
 
-Often the files in the template will be modified by the data in the `project.details.json`
+Often the files in the template will be modified by the data in the `package.details.json`
 file. For example the name of the project is needed in `pom.xml` and `project.json`.
 
 ## Templates are in the `laoban.json` file

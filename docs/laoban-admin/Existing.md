@@ -107,14 +107,14 @@ is a relationship between the two. This relationship will be removed in future r
 `--listTypes` is useful when you are in doubt about the legal list of types.
 
 ## Use `laoban-admin init --dryrun`
-`laoban projects` let us have a quick overview of what the `laoban-admin init` will do.
+
 `--dryrun` creates a number of files that allow us to see what would be generated.
 
 This is best seen from an IDE. If you start with git commited (recommended!) and
 try a `laoban-admin init` then you can see the files generated in the IDE. These are
 the `.laoban.test.json` and `.project.details.test.json` file. These files do nothing:
 they only exist to allow you to 'try before buy'. They are particularly useful if
-you have an existing `project.details.json` or `laoban.json` and want to use
+you have an existing `package.details.json` or `laoban.json` and want to use
 `laoban-admin` to update them
 
 ### Things to look for
@@ -128,7 +128,7 @@ The `.project.details.test.json` has three major parts worth looking at
 
 ## Use `laoban-admin init --force` To actually generate the laoban files
 
-This generates the real `laoban.json` and  `project.details.json`. From this point on
+This generates the real `laoban.json` and  `package.details.json`. From this point on
 `laoban` should work as expected
 
 ### Things to be cautious about
@@ -155,8 +155,8 @@ Do a `git diff` on the `package.json` so that you can check for changes.
 The `dependencies`, `devDependencies` and `bins` should be the same, but
 scripts might need to be sorted.
 
-## Use `laoban projects`, `laoban tsc` and `laoban test`
+## Use `laoban packages`, `laoban tsc` and `laoban test`
 
-These work as expected: the first lists the projects. The second runs `tsc` in each project
+These work as expected: the first lists the packages. The second runs `tsc` in each project
 and the third tests the projects.
 

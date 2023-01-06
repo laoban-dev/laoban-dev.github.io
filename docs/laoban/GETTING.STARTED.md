@@ -2,7 +2,7 @@
 
 After you have [installed](INSTALLING.LAOBAN.md) `laoban` you will need to 
 * Set up a `laoban.json`
-* add a `project.details.json` file to each subproject
+* add a `package.details.json` file to each subproject
   * Edit for name/description/template and links 
 * Create a templates directory 
   * Add a template for each type of project.
@@ -28,9 +28,9 @@ a reasonable start is
   ]}
 ```
 
-## Setting up `project.details.json`
+## Setting up `package.details.json`
 
-Each project (a directory with a package.json) needs a `project.details.json` file. This file is used (among other things) to 
+Each project (a directory with a package.json) needs a `package.details.json` file. This file is used (among other things) to 
 describe your project:
 * what 'type' of project it is (the template)
 * what extra dependancies it has that are not in the template
@@ -60,8 +60,8 @@ Example:
 
 ## Checking it
 
-* `laoban validate` should show you any problems with the `laoban.json` and project.details.json` files
-* `laoban projects` should show you all the projects
+* `laoban validate` should show you any problems with the `laoban.json` and package.details.json` files
+* `laoban packages` should show you all the projects
 * `laoban update` will replace the existing package.json files with the ones from the templates
 * `yarn` will install the dependancies
 * `laoban tsc` will compile the typescript
