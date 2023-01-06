@@ -79,8 +79,7 @@ projects all compile, that the tests execute and that they publish successfully.
 hard to 'check the logs' and see that happened. Here the command `laoban status` will tell us about the `named steps` 
 and whether the last time they executed they were successful.
 
-```typescript
-export interface CommandDefn {
+```
   name?: string,     // The name of the command
   command: string,   // the command that is actually executed
   status?: boolean,  // should the commands status be remembered
@@ -88,7 +87,6 @@ export interface CommandDefn {
   osGuard?: string,  // Is the command only able to run in one operating system
   pmGuard?: string,  // Is the command only able to run with one package manager
   directory?: string // override the directory that the command is executed in
-}
 ```
 
 ### eachLink
@@ -96,9 +94,9 @@ Some commands need to be accessed once for each link defined in the projectDetai
 
 ```
     "remoteLink"   : {
-...
       "commands"       : [
         {"name": "remoteLink", "command": "${packageManager} link ${link}", "eachLink": true, "status": true},
+        ]}
 ```
 Here we can see that the command will be executed once for each link. The variable `${link}` holds the value of the link
 
