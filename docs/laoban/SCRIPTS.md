@@ -123,6 +123,7 @@ Quite often we want to conditionally execute scripts. There are three main reaso
 Scripts can be marked so that they only run in a particularly OS. If called from the wrong os then an error is
 given. `guardReason` can be set to give an error message (and document why)
 
+
 ```json
 {
   "pack": {
@@ -169,6 +170,37 @@ Another good example is
 So by setting 'ports' to a numeric value in the  `package.details.json` we have  'marked' the directory in such a way
 that executing `laoban start` will start up the project. This lets us spin up multiple react projects at once. It's a
 good idea if all the projects have different ports, but laoban doesn't check this
+
+### Guard with default value
+
+Often we want to set a default value for the guard. For example if the guard is not set then we want it to default to true.
+This example shows how we can do that
+```json
+{
+  "defaultTrueGuard": {
+    "description": "lists all the projects unless the guard is set to false",
+    "commands":    ["js:process.cwd()"],
+    "guard":       {
+      "guard": "${packageDetails.details.guard}", "default": true
+    }
+  }
+}
+```
+
+### Guard which matches a value
+
+Suppose we want to do something if a project has value 'A' in it's `package.details.json` file. We can do that with
+```json
+{
+  "guardMatchingA": {
+    "description": "lists all the projects unless the guardValue is set to A",
+    "commands":    ["js:process.cwd()"],
+    "guard":       {
+      "guard": "${packageDetails.details.valueGuard}", "value": "A"
+    }
+  }}
+```
+
 
 ## Setting environment variables with scripts
 
