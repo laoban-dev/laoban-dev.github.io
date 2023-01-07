@@ -123,15 +123,16 @@ Quite often we want to conditionally execute scripts. There are three main reaso
 Scripts can be marked so that they only run in a particularly OS. If called from the wrong os then an error is
 given. `guardReason` can be set to give an error message (and document why)
 
-```
-    "pack"       : {
-       ...
-      "osGuard":  "Linux",
-      "guardReason": "uses the linux 'cp' command",
-      "commands"   : [
-          ....
-      ]
-    },
+```json
+{
+  "pack": {
+    "osGuard":     "Linux",
+    "guardReason": "uses the linux 'cp' command",
+    "commands":    [
+      "a command including cp"
+    ]
+  }
+}
 ```
 
 ### pmGuard
@@ -175,15 +176,16 @@ cwd is automatically added as an environment variable to represent the current d
 [variables](VARIABLES.md) can be added to scripts such as
 
 ```json
-    "ls-pact":        {
-"osGuard": "Windows_NT",
-"description": "lists the projects with pact files in them",
-"guard": "${projectDetails.details.packport}",
-"commands":    ["echo %PORT%  %cwd%"],
-"env": {
-"PORT": "${projectDetails.details.packport}"
-}
-},
+{
+  "ls-pact": {
+    "osGuard":     "Windows_NT",
+    "description": "lists the projects with pact files in them",
+    "guard":       "${projectDetails.details.packport}",
+    "commands":    ["echo %PORT%  %cwd%"],
+    "env":         {
+      "PORT": "${projectDetails.details.packport}"
+    }
+  }
 ```
 
 ## inLinksOrder
@@ -194,8 +196,8 @@ projects then we want to compile them in 'the right order'.
 Setting 'inLinksOrder' means that the links in the projectDetails are used to determine the order in which things are
 executed
 
-This can be seen using '-g | --generationPlan' as an option. This behavior can also be forced on any command by
-selecting -l, --links
+This can be seen using `-g | --generationPlan` as an option. This behavior can also be forced on any command by
+selecting `-l, --links`
 
 
 
