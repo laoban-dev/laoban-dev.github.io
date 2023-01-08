@@ -8,8 +8,8 @@ The 'whole point' of `laoban` is to allow scripts to be easily created that will
 ### Using run
 
 Actually you can execute a 'command' in every [project](PACKAGES.md) already. The follow will execute the command in
-quotes in each project. We are using a [variable](VARIABLES.md) `${packageDirectory}` because linux and windows have different ways of finding the current
-directory but the variable works anyway
+quotes in each project. We are using a [variable](VARIABLES.md) `${packageDirectory}` because linux and windows have
+different ways of finding the current directory but the variable works anyway
 
 ```shell
 laoban run 'echo "Hello ${packageDirectory}"' 
@@ -60,6 +60,7 @@ After adding this command `laoban --help` will now display the command and the d
 execute it
 
 <a id='complexCommands'></a>
+
 ### More complex commands
 
 ```json
@@ -74,9 +75,9 @@ execute it
 ```
 
 Here we can see that the command has one step with name `test`. Because status is true the step results will be visible
-in the status. This is very useful when we have 'things we want to pass' in many projects. It's important that the 
-projects all compile, that the tests execute and that they publish successfully. If we have many projects it can be
-hard to 'check the logs' and see that happened. Here the command `laoban status` will tell us about the `named steps` 
+in the status. This is very useful when we have 'things we want to pass' in many projects. It's important that the
+projects all compile, that the tests execute and that they publish successfully. If we have many projects it can be hard
+to 'check the logs' and see that happened. Here the command `laoban status` will tell us about the `named steps`
 and whether the last time they executed they were successful.
 
 ```
@@ -90,6 +91,7 @@ and whether the last time they executed they were successful.
 ```
 
 ### eachLink
+
 Some commands need to be accessed once for each link defined in the projectDetails file.
 
 ```
@@ -98,31 +100,32 @@ Some commands need to be accessed once for each link defined in the projectDetai
         {"name": "remoteLink", "command": "${packageManager} link ${link}", "eachLink": true, "status": true},
         ]}
 ```
+
 Here we can see that the command will be executed once for each link. The variable `${link}` holds the value of the link
 
 ### directory
+
 If a command needs to run in a different directory (typically a sub directory) the directory can be set
+
 ``` 
    "install"    : {
       "commands"   : [
         {"name": "link", "command": "${packageManager} link", "status": true, "directory": "dist"},
 ```             
+
 This link command is now executed in the `dist` sub directory
 
 ## Guards
 
-Quite often we want to conditionally execute scripts. There are three main reasons:
+Guards start very simple, but can get complex (if you want). The guards are used to prevent commands from being executed.
+A good example is `publish` which should only be executed if the project is marked as being able to be published.
 
-* we might want our script to work differently with linux/windows
-* we might want a slightly different script depending on the package manage
-* we might have different types of projects. For example we might have some javascript projects and some java projects.
-  When we test we might want to execute a different command. (`npm test` for javascript and `mvn test` for java)
+Details of guards and how to use them can be found [here](GUARDS.md)
 
-### OsGuard
+## OsGuard (deprecated)
 
 Scripts can be marked so that they only run in a particularly OS. If called from the wrong os then an error is
 given. `guardReason` can be set to give an error message (and document why)
-
 
 ```json
 {
@@ -136,70 +139,11 @@ given. `guardReason` can be set to give an error message (and document why)
 }
 ```
 
-### pmGuard
+## pmGuard (deprecated)
 
 If a script requires a particular package manager (example `npm test` and `yarn test` are both OK but `yarn install` is
 not allowed), then a pmGuard can be set. If the command is executed then it will give an error message. As
 with `osGuard`, `guardReason` can be set to document why
-
-### guard
-
-A command can be set to only execute if a guard is defined. Unlike the `osGuard` and `pmGuard` this does not cause an
-error message: only scripts that match are executed. Note that that we are using a [variable](VARIABLES.md) in the
-guard. The example of ls-ports here:
-
-```
-    "ls-ports"  : {
-      "description": "lists the projects that have a port defined in package.details.json",
-      "guard"      : "${projectDetails.details.port}",
-      "commands"   : ["js:process.cwd()"]
-    },
-```
-
-Another good example is
-
-```
-    "start"     : {
-      "description": "${packageManager} start for all projects that have a port defined in package.details.json",
-      "guard"      : "${projectDetails.details.port}",
-      "commands"   : ["${packageManager} start"],
-      "env"        : {"PORT": "${projectDetails.details.port}"}
-    },
-```
-
-So by setting 'ports' to a numeric value in the  `package.details.json` we have  'marked' the directory in such a way
-that executing `laoban start` will start up the project. This lets us spin up multiple react projects at once. It's a
-good idea if all the projects have different ports, but laoban doesn't check this
-
-### Guard with default value
-
-Often we want to set a default value for the guard. For example if the guard is not set then we want it to default to true.
-This example shows how we can do that
-```json
-{
-  "defaultTrueGuard": {
-    "description": "lists all the projects unless the guard is set to false",
-    "commands":    ["js:process.cwd()"],
-    "guard":       {
-      "guard": "${packageDetails.details.guard}", "default": true
-    }
-  }
-}
-```
-
-### Guard which matches a value
-
-Suppose we want to do something if a project has value 'A' in it's `package.details.json` file. We can do that with
-```json
-{
-  "guardMatchingA": {
-    "description": "lists all the projects unless the guardValue is set to A",
-    "commands":    ["js:process.cwd()"],
-    "guard":       {
-      "guard": "${packageDetails.details.valueGuard}", "value": "A"
-    }
-  }}
-```
 
 
 ## Setting environment variables with scripts
