@@ -37,7 +37,9 @@ When I make a command like this I often also include
     }
 ```
 
-# Execute a script differently depending on a guard value <a name="guardValue"></a>
+<div name="guardValue"></div>
+
+# Execute a script differently depending on a guard value
 
 This depending on the language defined in the `package.details.json` file. If the language is not defined then nothing
 will be executed
@@ -60,7 +62,9 @@ will be executed
 }
 ```
 
-# Execute a script with a default value<a name="guardDefault"></a>
+<div name="guardDefault"></div>
+
+# Execute a script with a default value
 
 For example we want to test projects unless the project has `test` set to false. Thus if it's not defined the tests will
 still run
@@ -74,7 +78,9 @@ still run
   }}
 ```
 
-# Adhoc<a name="adhoc"></a>
+<div name="adhoc"></div>
+
+# Adhoc
 
 ```shell
 | Purpose | Command |
