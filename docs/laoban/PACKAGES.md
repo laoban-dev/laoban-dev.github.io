@@ -14,7 +14,7 @@ has a [`laoban.json`](LAOBAN.JSON.md) file in it.
     "links": [
       "@laoban/variables", "@laoban/generations", "@laoban/validation", "@laoban/debug", "@laoban/files"
     ],
-    "tsc":   true,
+    "compile": true,
     "test":  true,
     "publish": true
   }
@@ -26,7 +26,7 @@ has a [`laoban.json`](LAOBAN.JSON.md) file in it.
 | name | The name of the project. This is the value that the project would be published to in `npmjs`
 | description | Human readable description of the project.
 | [details.links](#dependencies) | This is how we express 'This project depends on other projects'
-| details.tsc/test/publish | These control if commands are executed in this project
+| details.compile/test/publish | These control if commands are executed in this project
 
 ## Project details file and variables
 All the fields in a `package.details.json` file are available as [variables](VARIABLES.md) in scripts.
@@ -106,7 +106,7 @@ You should be able to see the packages now if you execute `laoban packages`
 * `details.links` are used within the 'master project' that laoban is looking after. * It allows laoban to set up symbolic links
   so that changes in one project are immediately reflected * These are added as dependencies to the project, with the '
   current version number'
-* `details.tsc` Should this project be compiled with the typescript compiler
+* `details.compile` Should this project be compiled with the typescript compiler
 * `details.test` should this project be testing by `npm test`
 * `details.publish` should this project be affected by commands with the guard condition ${projectDetails.details.publish}. Typically these are projects to be published to npmjs * typicall commands are `laoban pack`, `laoban publish`, `laoban ls-publish`
 
@@ -116,7 +116,7 @@ As described in [Scripts](SCRIPTS.md#complexCommands) some commands set `status`
  which means that the success or failure of the last run will be remembered and displayed 
 when you run `laoban status`.
 
-Examples of this are `laoban tsc`, `laoban test` and `laoban publish`.
+Examples of this are `laoban compile`, `laoban test` and `laoban publish`.
 
 ## Profiling
 For general interest the times of the `status` scripts is recorded and 

@@ -45,9 +45,9 @@ Note that to have access to `laoban npm_install` your `laoban.json` should inclu
 ## Compile your code
 
 ```shell
-laoban tsc -asl
+laoban compile -asl
 ```
-This executes the `tsc` command (typescript compile) in each project.
+This executes the `compile` command (typescript compile) in each project.
 
 ## Test your code
 
@@ -67,7 +67,7 @@ laoban status
 In the case of the `laoban` project itself it might give
 
 ```text
-                                             test  tsc
+                                             test  compile
 C:\git\laoban\code\modules\debug             true  true
 C:\git\laoban\code\modules\files             true  true
 C:\git\laoban\code\modules\generations       true  true
@@ -87,6 +87,6 @@ in `main`. Before executing a test or code in `main`
 we probably need to compile the `library`. This can be done by
 
 ```text
-laoban tsc -p library
+laoban compile -p library
 laoban test -p main
 ```

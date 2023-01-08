@@ -51,7 +51,6 @@ Example:
     "extraDevDeps": {"@types/fs-extra": "^9.0.5"},
     "extraBins"   : {"laoban": "dist/index.js"},
     "publish"     : true,
-    "tsc": true,
     "test": true
   }
 }
@@ -64,4 +63,4 @@ Example:
 * `laoban packages` should show you all the projects
 * `laoban update` will replace the existing package.json files with the ones from the templates
 * `yarn` will install the dependancies
-* `laoban tsc` will compile the typescript
+* `laoban compile` will compile the typescript

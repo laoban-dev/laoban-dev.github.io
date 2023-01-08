@@ -29,8 +29,8 @@ You can give a regex for the project name and the command will be executed in th
 Example
 
 * You are in a project X that depends on another project Y
-* you type laoban tsc -p X
-    * Now the tsc is executed in project X
+* you type `laoban compile` -p X
+    * Now the compile script is executed in project X
 
 ### option `-s`
 

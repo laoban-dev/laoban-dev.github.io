@@ -8,7 +8,7 @@ For more details [read here](Existing.md). Overview:
 * Use `laoban-admin init --force` To actually generate the laoban files
 * Use `laoban update` to generate package.json
 * Use `yarn` to make symbolic links
-* Use `laoban tsc` to compile the project
+* Use `laoban compile` to compile the project
 
 # Starting with a greenfield site
 

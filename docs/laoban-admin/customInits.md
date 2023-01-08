@@ -61,7 +61,7 @@ This has a number of fields, they are all optional
       "description": "${projectJson.description}",
       "details":     {
         "publish": false,
-        "tsc":     true,
+        "compile":     true,
         "test":    true,
         "links":   []
       }

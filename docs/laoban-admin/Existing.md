@@ -7,7 +7,7 @@ Overview:
 * Use `laoban-admin init --force` To actually generate the laoban files
 * Use `laoban update` to generate package.json
 * Use `yarn` to make symbolic links
-* Use `laoban tsc` to compile the project
+* Use `laoban compile` to compile the project
 
 ## Existing project in mono-repo or under a single directory
 
@@ -155,8 +155,8 @@ Do a `git diff` on the `package.json` so that you can check for changes.
 The `dependencies`, `devDependencies` and `bins` should be the same, but
 scripts might need to be sorted.
 
-## Use `laoban packages`, `laoban tsc` and `laoban test`
+## Use `laoban packages`, `laoban compile` and `laoban test`
 
-These work as expected: the first lists the packages. The second runs `tsc` in each project
+These work as expected: the first lists the packages. The second compiles each project
 and the third tests the projects.
 

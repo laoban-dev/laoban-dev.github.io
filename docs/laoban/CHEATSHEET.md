@@ -8,7 +8,7 @@
 | Command | Guarded? | Purpose |
 | --- | --- | --- |
 | `laoban update` | No |Used when the version number in `version.txt` has been changed to update the project, and is also used when a package.details.json file is changed 
-| `laoban tsc -asl` | details.tsc | Compile all the typescript projects in the correct order 
+| `laoban compile -asl` | details.compile | Compile all the typescript projects in the correct order 
 | `laoban test -asl` | details.test | Test all the typescript projects in the correct order
 | `laoban publish -asl` | details.publish | Publishes the projects to npm
 | `laoban status -a` | No |  Show the status of important commands (compile/test) across all projects

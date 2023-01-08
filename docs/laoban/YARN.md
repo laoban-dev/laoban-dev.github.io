@@ -30,4 +30,4 @@ Following the instructions for setting up  [workspaces](https://yarnpkg.com/feat
 * In each child project add a `package.details.json` and configure it with the name/description and links.
 * Use `laoban update` to create the `package.json`
 * Type `yarn` to install everything and get the workspaces setup
-* `laoban tsc -asl` will compile everything in the right order
+* `laoban compile -asl` will compile everything in the right order
