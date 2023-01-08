@@ -7,7 +7,8 @@ Here are some examples of how to make scripts: either adhoc with 'run' or by mod
 * [Execute a script which has a default of 'true'](#guardDefault)
 * [ahdoc scripts](#adhoc)
 
-# Execute a script if a guard is true<a id="guardTrue"></a>
+<div id="guardTrue"></div>
+# Execute a script if a guard is true
 
 For example compile
 
