@@ -5,6 +5,8 @@ Here are some examples of how to make scripts: either adhoc with 'run' or by mod
 * [Execute a script if a guard is true](#guardTrue)
 * [Execute a script depending on the value of a guard](#guardValue)
 * [Execute a script which has a default of 'true'](#guardDefault)
+* [Execute a script which behaves differently on windows or linux](#guardOs)
+* [Execute a script which behaves depending on the packageManager](#packageManager)
 * [ahdoc scripts](#adhoc)
 
 <div id="guardTrue"></div>
@@ -76,6 +78,55 @@ still run
     "guard":       {"value": "${projectDetails.details.test}", "default": true},
     "commands":    [{"name": "test", "command": "${packageManager} test", "status": true}]
   }}
+```
+
+<div name="guardOs"></div>
+
+# Execute a script differently on windows or linux
+
+For example we want to run a script differently on windows or linux. 
+
+```json
+{
+  "clean": {
+    "description": "Compiles the project (either java or typescript)",
+    "commands":    [
+      {
+        "name":  "compile", "command": "echo Linux ${packageDirectory}", "status": true,
+        "guard": {"value": "${os}", "equals": "Windows_NT"}
+      },
+      {
+        "name":  "compile", "command":  "echo Windows ${packageDirectory}", "status": true,
+        "guard": {"value": "${os}", "equals": "Linux"}
+      }
+    ]
+  }
+}
+```
+
+<div name="packageManager"></div>
+
+# Execute a script depending on the packageManager
+
+A good example here is the `npm install` command which on yarn is just `yarn`. There is no real point doing yarn in each
+package if you are using workspaces, but not everyone does.
+
+```json
+{
+  "install": {
+    "description": "Installs the project",
+    "commands":    [
+      {
+        "name":  "install", "command": "yarn", "status": true,
+        "guard": {"value": "${packageManager}", "equals": "yarn"}
+      },
+      {
+        "name":  "install", "command": "npm install", "status": true,
+        "guard": {"value": "${packageManager}", "equals": "npm"}
+      }
+    ]
+  }
+}
 ```
 
 <div name="adhoc"></div>
