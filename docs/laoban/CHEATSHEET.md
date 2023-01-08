@@ -23,6 +23,7 @@ with existing projects
 | `laoban-admin projects` | Lists the found projects in the monorepo (with package.json files) and what is the recommended template
 | `laoban-admin init --dryrun` |  Generates 'test' files that allow you to look at them before using them
 | `laoban-admin init --force` |  Sets up your project with `laoban.json` and `package.details.json` that should work
+| `laoban-admin newPackage <packageLocation> -p <packageName>` |  Creates a new package in the monorepo
 
 
 

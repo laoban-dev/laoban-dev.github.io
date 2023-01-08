@@ -18,6 +18,14 @@ For more details [read here](Greenfield.md). Overview:
 * Use `laoban-admin init --force` To actually generate the laoban files
 * Edit the `laoban.json` file: it will have errors in it as it cannot 'scrape' an existing project
 
+# Creating a new package
+
+* Open the command line, and change directory to somewhere 'above' the package you want to create
+* Use `laoban-admin newpackage <pathToDirectory>` to create a new package
+* use `laoban-admin newpackage --help` for details of options
+
+
+
 # What next
 
 ## Using laoban to test/compile
