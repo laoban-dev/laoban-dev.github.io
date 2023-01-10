@@ -24,7 +24,10 @@ with existing projects
 | `laoban-admin init --dryrun` |  Generates 'test' files that allow you to look at them before using them
 | `laoban-admin init --force` |  Sets up your project with `laoban.json` and `package.details.json` that should work
 | `laoban-admin newpackage <packageLocation> -p <packageName>` |  Creates a new package in the monorepo
-| `laoban-admin newtemplate -t <templatename> --directory <directory> ` |  creates a new template called `<templatename>` from the files in the `<directory>` 
+| `laoban-admin newtemplate`  |  creates a new template with a default name from the files in the current directory placing the template under the `templates` directory (under the current directory) 
+| `laoban-admin newtemplate --directory <directory>`  |  creates a new template with a default name from the files in the `directory` placing the template under the `templates` directory (under the current directory) 
+| `laoban-admin newtemplate -t <templatename> --directory <directory> --template <templatesdirectory> ` |  creates a new template called `<templatename>` from the files in the `<directory>`, placing the template under the `templatesdirectory` directory 
+| `laoban-admin makeintotemplate  --directory <directory> ` |  Turns the <directory> into a template 
 
 
 
