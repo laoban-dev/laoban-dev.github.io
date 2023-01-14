@@ -9,11 +9,11 @@ After you have [installed](INSTALLING.LAOBAN.md) `laoban` you will need to
 
 # The easy way
 
-Install and use [`laoban-admin`](https://www.npmjs.com/package/@laoban/admin)
+Use [laoban admin](../laoban-admin/DOCUMENTATION.md)
 
 # The 'do it yourself way'
 
-It is almost always better to use [`laoban-admin`](https://www.npmjs.com/package/@laoban/admin) but if you want to do it yourself then follow these steps.
+It is almost always better to use [`laoban admin`](https://www.npmjs.com/package/@laoban/admin) but if you want to do it yourself then follow these steps.
 
 ## Setting up `laoban.json`
 Details of this file can be found [here](LAOBAN.JSON.md). If you are working with typescript and using yarn

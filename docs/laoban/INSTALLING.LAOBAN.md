@@ -13,5 +13,4 @@ run this command with either `sudo` on linux, or as administrator on windows.
 At the command line
 ```shell
 laoban --version
-laoban-admin --version
 ```

@@ -3,7 +3,7 @@
 At the moment it is still extremely experimental. It works for the default inits. It needs some work to make
 it more suitable for general use. The documentation is here
 
-If you have made your own templates and `laoban.json` and want `laoban-admin` to detect then then you need to set up
+If you have made your own templates and `laoban.json` and want `laoban admin` to detect them, then you need to set up
 an 'init'. At the moment it is still extremely experimental. It works for the default inits. It needs some work to make
 it more suitable for general use.
 

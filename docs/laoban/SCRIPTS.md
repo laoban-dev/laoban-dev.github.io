@@ -43,6 +43,27 @@ otherwise add the following
 You can now execute this with `laoban helloWorld`, find it in the help with `laoban --help` and it has it's own help
 section with `laoban helloWorld --help`
 
+## What can we run
+
+### Shell commands
+
+The default type of command is a shell command. For example `"echo Hello ${packageDirectory}`
+
+### Javascript commands
+
+Arbitrary javascript commands can be executed. For example `"js:process.cwd()"`
+
+### File commands
+
+Since Windows and linux have different ways of deleting files, we can use a file command to delete a file. There are
+currently three types of file command: all about deleting files, but later we might add move/copy etc.
+
+|= Command |= Purpose
+| --- | ---
+| file:rm <filename> | Deletes a file
+| file:rmDir <directory>| Deletes a directory
+| file: rmLog | Deletes the log file (is special because logs are in use by laoban). Only really used by the `clean` command
+
 ## Types of commands
 
 ### Simple commands
@@ -117,34 +138,11 @@ This link command is now executed in the `dist` sub directory
 
 ## Guards
 
-Guards start very simple, but can get complex (if you want). The guards are used to prevent commands from being executed.
-A good example is `publish` which should only be executed if the project is marked as being able to be published.
+Guards start very simple, but can get complex (if you want). The guards are used to prevent commands from being
+executed. A good example is `publish` which should only be executed if the project is marked as being able to be
+published.
 
 Details of guards and how to use them can be found [here](GUARDS.md)
-
-## OsGuard (deprecated)
-
-Scripts can be marked so that they only run in a particularly OS. If called from the wrong os then an error is
-given. `guardReason` can be set to give an error message (and document why)
-
-```json
-{
-  "pack": {
-    "osGuard":     "Linux",
-    "guardReason": "uses the linux 'cp' command",
-    "commands":    [
-      "a command including cp"
-    ]
-  }
-}
-```
-
-## pmGuard (deprecated)
-
-If a script requires a particular package manager (example `npm test` and `yarn test` are both OK but `yarn install` is
-not allowed), then a pmGuard can be set. If the command is executed then it will give an error message. As
-with `osGuard`, `guardReason` can be set to document why
-
 
 ## Setting environment variables with scripts
 
@@ -162,6 +160,7 @@ cwd is automatically added as an environment variable to represent the current d
       "PORT": "${projectDetails.details.packport}"
     }
   }
+}
 ```
 
 ## inLinksOrder

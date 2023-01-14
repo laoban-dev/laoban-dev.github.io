@@ -2,9 +2,9 @@
 
 Overview:
 * Open the command line, and change directory to the root of the git repo
-* Use `laoban-admin projects` to see what projects are in the mono-repo
-* Use `laoban-admin init --dryrun` to see what laoban files will be generated
-* Use `laoban-admin init --force` To actually generate the laoban files
+* Use `laoban admin projects` to see what projects are in the mono-repo
+* Use `laoban admin init --dryrun` to see what laoban files will be generated
+* Use `laoban admin init --force` To actually generate the laoban files
 * Use `laoban update` to generate package.json
 * Use `yarn` to make symbolic links
 * Use `laoban compile` to compile the project
@@ -18,17 +18,17 @@ and decide 'what type of project' it is and select a suitable template for it.
 It is quite possible for your company or organisation to define some new types of projects
 and set it so that the scanning software will detect them. For example if half of your
 projects are 'typescript + react + storybook' and others are 'typescript + express' then
-you can define two new types of project and laoban-admin will detect them. Details below.
+you can define two new types of project and laoban admin will detect them. Details below.
 This is only worth doing 'for fun' or if you have a lot of projects.
 
 ## Exploring what we have
 
 * Open the command line, and change directory to the root of the git repo
-* Use `laoban-admin projects` to see what projects are in the mono-repo
+* Use `laoban admin projects` to see what projects are in the mono-repo
 
 Here is an example of doing this on the `laoban` code base
 ```shell
-C:\git\laoban\code> laoban-admin  projects
+C:\git\laoban\code> laoban admin  projects
 Found an existing laoban.json file at C:\git\laoban\code
 Would put laoban.json into  C:\git\laoban\code  which allows the following templates {
   javascript: '@laoban@/templates/javascript',
@@ -54,7 +54,7 @@ Found an existing laoban.json file at C:\git\laoban\code
 Laoban is telling is the place that it will put the 'root' of the projects in `c:\git\laoban\code`.
 This is the directory that contains the existing `laoban.json` file.
 
-`laoban-admin` uses a number of strategies to pick the best place to put the
+`laoban admin` uses a number of strategies to pick the best place to put the
 root of the projects, and this is one of them.
 
 ### Part 2
@@ -82,7 +82,7 @@ package.json                               Guessed Template
     C:\git\laoban\code/modules/validation  typescript
     C:\git\laoban\code/modules/variables   typescript
 ```
-There there is a list of projects that have been found, and the guess that `laoban-admin` has
+There there is a list of projects that have been found, and the guess that `laoban admin` has
 made for the template for that projects
 
 ### Command line arguments
@@ -106,27 +106,27 @@ is a relationship between the two. This relationship will be removed in future r
 
 `--listTypes` is useful when you are in doubt about the legal list of types.
 
-## Use `laoban-admin init --dryrun`
+## Use `laoban admin init --dryrun`
 
 `--dryrun` creates a number of files that allow us to see what would be generated.
 
 This is best seen from an IDE. If you start with git commited (recommended!) and
-try a `laoban-admin init` then you can see the files generated in the IDE. These are
+try a `laoban admin init` then you can see the files generated in the IDE. These are
 the `.laoban.test.json` and `.project.details.test.json` file. These files do nothing:
 they only exist to allow you to 'try before buy'. They are particularly useful if
 you have an existing `package.details.json` or `laoban.json` and want to use
-`laoban-admin` to update them
+`laoban admin` to update them
 
 ### Things to look for
 
 The `.project.details.test.json` has three major parts worth looking at
 
-* `links` If a project uses another project also in the monorepo, then the `laoban-admin init` should detect that relationship and add any  dependent projects here
-* `extraDeps` If a project uses dependencies that are not in the template t, then the `laoban-admin init` adds those dependencies here
-* `extraDevDeps` If a project uses devDependencies that are not in the template t, then the `laoban-admin init` adds those devDependencies here
+* `links` If a project uses another project also in the monorepo, then the `laoban admin init` should detect that relationship and add any  dependent projects here
+* `extraDeps` If a project uses dependencies that are not in the template t, then the `laoban admin init` adds those dependencies here
+* `extraDevDeps` If a project uses devDependencies that are not in the template t, then the `laoban admin init` adds those devDependencies here
 
 
-## Use `laoban-admin init --force` To actually generate the laoban files
+## Use `laoban admin init --force` To actually generate the laoban files
 
 This generates the real `laoban.json` and  `package.details.json`. From this point on
 `laoban` should work as expected

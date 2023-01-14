@@ -21,6 +21,7 @@
 * [Logs](laoban/LOGS.md)
 * [Projects](laoban/PACKAGES.md)
 * [Scripts](laoban/SCRIPTS.md)
+* [Scripts Cookbook](laoban/SCRIPTS_COOKBOOK.md)
 * [Templates](laoban/TEMPLATES.md)
 * [Variables](laoban/VARIABLES.md)
 * [Command line arguments](laoban/COMMAND.LINE.ARGUMENTS.md)
