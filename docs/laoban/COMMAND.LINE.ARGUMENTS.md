@@ -1,16 +1,20 @@
 # Command line arguments
 
-Typing `laoban` or `laoban --help` will display a list of the commands that can be executed, and information about options.
-
 In order to find about the arguments that can be used with a specific script type `laoban <scriptName> --help`
+
+* In general the most common arguments used are `-asl`. This means 'run it everywhere, in the right order and make the
+output legible'
+* The second most common is -p <package>. This means 'run it in the specified package'. <package> is a regular expression
+
+Most of the rest of the options are only needed occasionally, usually when making, testing and debugging scripts.
 
 ## Command line arguments without a script given
 
 * `--version` displays the version number
-* `--help` displays a help summary. 
+* `--help` displays a help summary.
 * `--load.laoban.debug` Use this when laoban doesn't run properly.
 
-The last option is used when you've changed `laoban.json` or are using something in the parents and they 'don't work'. 
+The last option is used when you've changed `laoban.json` or are using something in the parents and they 'don't work'.
 The debug gives information about what is being loaded, and where from. It's not perfect, but might help.
 
 ## Common command line arguments for scripts
@@ -59,3 +63,9 @@ that will be processed in parallel. This is descriped [here](PACKAGES.md)
 
 Sets the maximum number of items executed at once, so that the computer doesn't get over loaded. This overrides the
 setting in laoban.json. Use this when using a weak computer (actually it's usually better to set it in `laoban.json`)
+
+### option '--ignoreGuards'
+
+This should really only be used while you are developing scripts. It ignores any guards that you have set on commands.
+For example you might have a command that compiles a project. There is a guard that prevent it executing in some
+package, and you are trying to work out why it's not working. You can use this option to ignore the guard.

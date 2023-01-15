@@ -25,7 +25,6 @@ For more details [read here](Greenfield.md). Overview:
 * use `laoban admin newpackage --help` for details of options
 
 
-
 # What next
 
 ## Using laoban to test/compile

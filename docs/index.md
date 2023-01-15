@@ -11,23 +11,27 @@
 * [Github site](https://github.com/laoban-github/laoban)
 * [Documentation source](https://github.com/laoban-github/laoban-github.github.io)
 
-## Laoban documentation
+## What do you need to know if you are using `loaban` to manage your project?
 
 * [Getting starting with a project already managed by `laoban`](https://laoban-github.github.io/laoban/LAOBAN.EXISTING.html)
-* [Getting starting by adding `laoban` to your project](https://laoban-github.github.io/laoban/GETTING.STARTED.html)
 * [Cheat Sheet](laoban/CHEATSHEET.md)
 * [Laoban and Yarn](laoban/YARN.md)
-* [laoban.json](laoban/LAOBAN.JSON.md)
 * [Logs](laoban/LOGS.md)
-* [Projects](laoban/PACKAGES.md)
-* [Scripts](laoban/SCRIPTS.md)
-* [Scripts Cookbook](laoban/SCRIPTS_COOKBOOK.md)
-* [Templates](laoban/TEMPLATES.md)
-* [Variables](laoban/VARIABLES.md)
 * [Command line arguments](laoban/COMMAND.LINE.ARGUMENTS.md)
 
+## What do you need to know to add laoban to your project?
+* [Getting starting by adding `laoban` to your project](https://laoban-github.github.io/laoban/GETTING.STARTED.html)
+* [laoban.json](laoban/LAOBAN.JSON.md)
+* [Packages](laoban/PACKAGES.md)
+* [Templates](laoban/TEMPLATES.md)
+
+## What do you need to know to write your own scripts?
+
+* [Scripts](laoban/SCRIPTS.md)
+* [Scripts Cookbook](laoban/SCRIPTS_COOKBOOK.md)
+* [Variables](laoban/VARIABLES.md)
+
 # Laoban admin documentation
-* [NPMJS site](https://www.npmjs.com/package/@laoban/admin)
 * [All Laoban admin documentation](laoban-admin/DOCUMENTATION.md)
 * [Laoban admin with existing projects](laoban-admin/Existing.md)
 * [Laoban admin with greenfield projects](laoban-admin/Greenfield.md)

@@ -28,10 +28,6 @@ For example compile
 When I make a command like this I often also include
 
 ```shell
-    "compile-noguard": {
-      "description": "runs compile without a guard",
-      "commands":    [{"name": "tsc", "command": "tsc --noEmit false --outDir dist", "status": true}]
-    },
     "ls-compile":      {
       "description": "lists projects that will be compiled",
       "guard":       "${packageDetails.details.compile}",
@@ -77,14 +73,15 @@ still run
     "description": "runs ${packageManager} test",
     "guard":       {"value": "${projectDetails.details.test}", "default": true},
     "commands":    [{"name": "test", "command": "${packageManager} test", "status": true}]
-  }}
+  }
+}
 ```
 
 <div name="guardOs"></div>
 
 # Execute a script differently on windows or linux
 
-For example we want to run a script differently on windows or linux. 
+For example we want to run a script differently on windows or linux.
 
 ```json
 {
@@ -96,7 +93,7 @@ For example we want to run a script differently on windows or linux.
         "guard": {"value": "${os}", "equals": "Windows_NT"}
       },
       {
-        "name":  "compile", "command":  "echo Windows ${packageDirectory}", "status": true,
+        "name":  "compile", "command": "echo Windows ${packageDirectory}", "status": true,
         "guard": {"value": "${os}", "equals": "Linux"}
       }
     ]
@@ -133,10 +130,9 @@ package if you are using workspaces, but not everyone does.
 
 # Adhoc
 
-```shell
 | Purpose | Command |
 | --- | --- |
-| Copy a license file to each project | laoban run 'cp ${laobanDirectory}/LICENSE.md ${packageDirectory}' |
-| remove the dist directories  | laoban run 'rm -rf dist' |
-| remove the target directories  | laoban run 'rm -rf dist' |
-| remove node_modules directories  | laoban run 'rm -rf node_modules' |
+| Copy a license file to each project | `laoban run 'cp ${laobanDirectory}/LICENSE.md ${packageDirectory}'` |
+| remove the dist directories  | `laoban run 'file:rmDir(dist)'` |
+| remove the target directories  | `laoban run 'file:rmDir(target)'` |
+| remove node_modules directories  | `laoban run 'file:rmDir(node_modules)'` |
