@@ -18,16 +18,13 @@
 
 # Adding a new `package` to an existing `laoban` project
 
-<div style="th:{width:50%}">
-
-|Command  |  Purpose |
+| Command  |  Purpose |
 | --- | --- |
 | `laoban admin newpackage <directory>` |  the specified directory is created if needed and turned into a `package`. Options can be used to control the template and the package name
 | `laoban admin newpackage` |  the current directory is turned into a `package`. Options can be used to control the template and the package name。 Or you can just inspect and edit the `package.details.json` file afterwards (and run `laoban update` after editing)
 | `laoban admin newpackage  -p <packageName>` |  the current directory is turned into a `package`. The name of the package is set to `<packageName>`
 | `laoban admin newpackage  --template <template>` |  the current directory is turned into a `package`. The template of the package is set to `<template>`
 
-</div>
 Note that if the `package.details.json` already exists (i.e. it is already a new package) then you will need to add `--force` to overwrite it.
 
 # laoban admin Cheatsheet
