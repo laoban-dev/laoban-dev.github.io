@@ -14,6 +14,7 @@
 ## What do you need to know if you are using `loaban` to manage your project?
 
 * [Getting starting with a project already managed by `laoban`](https://laoban.dev/laoban/LAOBAN.EXISTING.html)
+* [Training course on adding laoban](training/EXISTING.md)
 * [Cheat Sheet](laoban/CHEATSHEET.md)
 * [Laoban and Yarn](laoban/YARN.md)
 * [Logs](laoban/LOGS.md)
