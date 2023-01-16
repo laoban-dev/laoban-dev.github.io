@@ -9,7 +9,7 @@
 
 * [NPMJS site](https://www.npmjs.com/package/laoban)
 * [Github site](https://github.com/laoban-github/laoban)
-* [Documentation source](https://laoban.dev/)
+* [Documentation source](https://github.com/laoban-dev/laoban)
 
 ## What do you need to know if you are using `loaban` to manage your project?
 
