@@ -24,8 +24,12 @@
 | `laoban admin newpackage` |  the current directory is turned into a `package`. Options can be used to control the template and the package name。 Or you can just inspect and edit the `package.details.json` file afterwards (and run `laoban update` after editing)
 | `laoban admin newpackage  -p <packageName>` |  the current directory is turned into a `package`. The name of the package is set to `<packageName>`
 | `laoban admin newpackage  --template <template>` |  the current directory is turned into a `package`. The template of the package is set to `<template>`
+| `laoban admin templates` |  shows the available templates usable in the --template option above
 
-Note that if the `package.details.json` already exists (i.e. it is already a new package) then you will need to add `--force` to overwrite it.
+## Notes
+
+* If the `package.details.json` already exists (i.e. it is already a new package) then you will need to add `--force` to overwrite it.
+* If the template you want to use isn't in the list give by `laoban admin templates` then you need to modify the `laoban.json` file to add it
 
 # laoban admin Cheatsheet
 

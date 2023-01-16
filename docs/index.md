@@ -9,18 +9,18 @@
 
 * [NPMJS site](https://www.npmjs.com/package/laoban)
 * [Github site](https://github.com/laoban-github/laoban)
-* [Documentation source](https://github.com/laoban-github/laoban-github.github.io)
+* [Documentation source](https://laoban.dev/)
 
 ## What do you need to know if you are using `loaban` to manage your project?
 
-* [Getting starting with a project already managed by `laoban`](https://laoban-github.github.io/laoban/LAOBAN.EXISTING.html)
+* [Getting starting with a project already managed by `laoban`](https://laoban.dev/laoban/LAOBAN.EXISTING.html)
 * [Cheat Sheet](laoban/CHEATSHEET.md)
 * [Laoban and Yarn](laoban/YARN.md)
 * [Logs](laoban/LOGS.md)
 * [Command line arguments](laoban/COMMAND.LINE.ARGUMENTS.md)
 
 ## What do you need to know to add laoban to your project?
-* [Getting starting by adding `laoban` to your project](https://laoban-github.github.io/laoban/GETTING.STARTED.html)
+* [Getting starting by adding `laoban` to your project](https://laoban.dev//laoban/GETTING.STARTED.html)
 * [laoban.json](laoban/LAOBAN.JSON.md)
 * [Packages](laoban/PACKAGES.md)
 * [Templates](laoban/TEMPLATES.md)
