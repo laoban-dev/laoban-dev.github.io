@@ -17,7 +17,6 @@
 | `laoban run 'rm -rf node_modules'` | No | In linux remove all the node modules from the project (be careful)
 
 # Adding a new `package` to an existing `laoban` project
-
 | <div style="width:50%">Command</div> |  Purpose |
 | --- | --- |
 | `laoban admin newpackage <directory>` |  the specified directory is created if needed and turned into a `package`. Options can be used to control the template and the package name
