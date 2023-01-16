@@ -18,7 +18,7 @@
 
 # Adding a new `package` to an existing `laoban` project
 
-| Command |  Purpose |
+| <div style="width:50%">Command</div> |  Purpose |
 | --- | --- |
 | `laoban admin newpackage <directory>` |  the specified directory is created if needed and turned into a `package`. Options can be used to control the template and the package name
 | `laoban admin newpackage` |  the current directory is turned into a `package`. Options can be used to control the template and the package name。 Or you can just inspect and edit the `package.details.json` file afterwards (and run `laoban update` after editing)
