@@ -30,7 +30,7 @@
 ## What do you need to know to write your own scripts?
 
 * [Scripts](laoban/SCRIPTS.md)
-* [Scripts Cookbook](laoban/SCRIPTS_COOKBOOK.md)
+* [Scripts Cookbook](laoban/COOKBOOK.md)
 * [Variables](laoban/VARIABLES.md)
 * [Guards](laoban/GUARDS.md)
 
