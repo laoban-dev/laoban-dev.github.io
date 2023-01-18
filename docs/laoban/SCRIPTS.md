@@ -174,7 +174,11 @@ executed
 This can be seen using `-g | --generationPlan` as an option. This behavior can also be forced on any command by
 selecting `-l, --links`
 
+# showShell
 
+Some commands we want to be 'quiet' if nothing is wrong. For example compile: if everything is OK we want no output.
+Others are more verbose: such as test. For these we can set 'showShell:true' and the output will be shown as though 
+the -s options was used
 
 
 
