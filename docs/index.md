@@ -22,7 +22,7 @@
 ## What do you need to know to add laoban to your project?
 
 * [Getting starting by adding `laoban` to your project](laoban/GETTING.STARTED.md)
-* [Training course on adding laoban](training/EXISTING.md)
+* [Training course on adding laoban to a project](training/EXISTING.md)
 * [laoban.json](laoban/LAOBAN.JSON.md)
 * [Packages](laoban/PACKAGES.md)
 * [Templates](laoban/TEMPLATES.md)

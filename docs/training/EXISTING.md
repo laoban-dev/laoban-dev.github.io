@@ -102,6 +102,15 @@ Go look at the files system: you will see that a new directory has been created 
 In it there is a `.template.json` (a template definition) and a `package.json` (the template itself). These can be edited 
 by hand, although it is rare to modify the `.template.json` file manually.
 
+Note how small the `package.json` in the template is: it just holds the 'differences' between it and the parent:
+```json
+{
+  "devDependencies": {
+    "typescript": "^4.9.4"
+  }
+}
+```
+
 ### Check for impact again
 
 ```shell

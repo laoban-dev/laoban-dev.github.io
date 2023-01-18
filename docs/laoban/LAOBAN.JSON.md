@@ -12,7 +12,7 @@ The existence of the file marks that this is the root of a 'big project' which i
 
 ## Parents
 
-It is rare to just have 'a single laoban.json with all the s'. That would probably violate the principle of 'separation of concerns'.
+It is rare to just have 'a single laoban.json with all the stuff'. That would probably violate the principle of 'separation of concerns'.
 
 Instead, we have the ability to 'merge together' lots of parents. A typical
 `laoban.json` file might look like this:
