@@ -10,7 +10,7 @@ In a git project this would be just `git clone xxx`
 ## Find the `laoban.json` file
 
 Very often this is in the root directory. This is the 'base' directory of the project and when working with `laoban` you
-must be 'in' or 'under' this project.
+must be 'in' or 'under' this directory.
 
 ## Open a command line terminal
 

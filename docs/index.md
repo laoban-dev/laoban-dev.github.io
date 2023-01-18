@@ -2,7 +2,7 @@
 
 ## Installation
 
-`npm -i -g laoban`
+* [`npm -i -g laoban`](INSTALLING.LAOBAN.md)
 
 ## Where is the code?
 
