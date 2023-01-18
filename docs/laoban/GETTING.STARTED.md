@@ -1,66 +1,84 @@
 # Getting started
 
-After you have [installed](INSTALLING.LAOBAN.md) `laoban` you will need to 
-* Set up a `laoban.json`
-* add a `package.details.json` file to each subproject
-  * Edit for name/description/template and links 
-* Create a templates directory 
-  * Add a template for each type of project.
+It is possible to do all the following tasks by creating files yourself. In essence all you need to do is 
+copy a `laoban.json` from another project, and for each package add a `package.details.json`. However this is slow and 
+error prone
 
-# The easy way
+`laoban admin` provides a number of commands to help you get started.
 
-Use [laoban admin](../laoban-admin/DOCUMENTATION.md)
+## Install
 
-# The 'do it yourself way'
-
-It is almost always better to use [`laoban admin`](https://www.npmjs.com/package/@laoban/admin) but if you want to do it yourself then follow these steps.
-
-## Setting up `laoban.json`
-Details of this file can be found [here](LAOBAN.JSON.md). If you are working with typescript and using yarn
-a reasonable start is 
-```json
-{
-  "packageManager": "yarn",
-  "parents":        [
-    "https://raw.githubusercontent.com/phil-rice/laoban/master/common/laoban.json/core.laoban.json",
-    "https://raw.githubusercontent.com/phil-rice/laoban/master/common/laoban.json/typescript.laoban.json",
-    "https://raw.githubusercontent.com/phil-rice/laoban/master/common/laoban.json/typescript.publish.laoban.json"
-  ]}
+```shell
+npm i -g laoban
 ```
 
-## Setting up `package.details.json`
+[If you have issues read](INSTALLING.LAOBAN.md) 
 
-Each project (a directory with a package.json) needs a `package.details.json` file. This file is used (among other things) to 
-describe your project:
-* what 'type' of project it is (the template)
-* what extra dependancies it has that are not in the template
+## Read the training course
 
-Example:
-```json
-{
-  "template"   : "typescript",
-  "name"       : "laoban",
-  "description": "A cli for managing projects that have many npm packages",
-  "details"    : {
-    "keywords": ["monorepo","devops"],
-    "links"       : ["@laoban/variables","@laoban/generations", "@laoban/validation", "@laoban/debug","@laoban/files"],
-    "extraDeps"   : {
-      "fs-extra" : "^9.0.1",
-      "commander": "^6.2.0"
-    },
-    "extraDevDeps": {"@types/fs-extra": "^9.0.5"},
-    "extraBins"   : {"laoban": "dist/index.js"},
-    "publish"     : true,
-    "test": true
-  }
-}
+If this is your first time, it helps to practice on a training project. The training project is a simple project with a
+monorepo structure. It is a good starting point for learning how to use `laoban`.
 
+[Details are here](../training/EXISTING.md)
+
+## Start with a clean system
+
+Make a new git branch for this, and make sure that everything is commited: you want to be able to see what 
+has happened and be able to roll back!
+
+## Create `laoban.json` and `package.details.json` files
+
+```shell
+laoban admin init
+```
+Take a look at what has changed. None of the `package.json` files have been changed. You can look at the
+created files. 
+
+It is quite likely that you have the 
+
+
+## Check for impact
+
+```shell
+laoban admin analyze --showimpact
+``` 
+This will show you if running `laoban update` would change your package.json. Probably it will! Unless you
+use precisely the same version of typescript as laoban... The changes are typically
+the version of typescript/react, or parts of the package.json that the default templates don't know about.
+
+## Update the template
+
+Pick one of the packages and use it to update the template. 
+
+```shell
+laoban admin updatetemplate --directory <the directory of the package you selected>
+```
+If you want to edit the template, you can do that locally now (it's under the `templates` directory). Find the `package.json`
+and add any bits you want.
+
+## Check for impact again
+
+```shell
+laoban admin analyze --showimpact
+``` 
+
+As long as you have 'one version of typescript/react/etc' you should quickly get to the point where the impact is either
+'nothing' or something you don't care about
+
+## Update the packages
+
+```shell
+laoban update
 ```
 
-## Checking it
+## Check everything compiles/tests
 
-* `laoban validate` should show you any problems with the `laoban.json` and package.details.json` files
-* `laoban packages` should show you all the projects
-* `laoban update` will replace the existing package.json files with the ones from the templates
-* `yarn` will install the dependancies
-* `laoban compile` will compile the typescript
+I would typically do the following here
+```shell
+yarn
+laoban update
+laoban compile
+laoban test
+laoban status
+```
+

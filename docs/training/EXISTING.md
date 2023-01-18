@@ -40,19 +40,59 @@ structure changes we need to maintain these scripts.
 
 This would just be `laoban compile`. Laoban will do the parallelism and the correct order.
 
+
 ## Setting up the project with `laoban`
 
 If we are going to use the 'default templates' then this is very easy. The default templates are for a very 
 precise version of typescript (4.0.5). It is very easy to make a template for a different version of typescript 
 and we explore that below
 
+* open a command shell
 * Install laoban with `npm i -g laoban`
 * cd to the root of the project
+
+
+### Check for impact
+
+When the default templates are used there may be a change to package dependencies. It is important to understand what will
+happen when we do this
+```shell
+laoban admin analyzepackages --showimpact
+```
+This produces the following
+```json
+{
+  "C:\\git\\laobantraining\\convertexistingproject/modules/lib1": {
+    "devDependencies": {"typescript": "^4.9.4 => ^4.0.5"}
+  },
+  "C:\\git\\laobantraining\\convertexistingproject/modules/lib2": {
+    "devDependencies": {"typescript": "^4.9.4 => ^4.0.5"}
+  },
+  "C:\\git\\laobantraining\\convertexistingproject/modules/main": {
+    "devDependencies": {"typescript": "^4.9.4 => ^4.0.5"}
+  }
+}
+```
+
+This tells us that using the default templates will downgrade the version of typescript. For now we will accept this,
+although we will see how to solve this later.
+
+### Generate the laoban files
+
+
 * `laoban admin init --force` - this will create a `laoban.details.json` file in the root of the project, and a `project.details.json` in each of the three packages
 
-You can explore what this has done in an IDE. You can also see what has been created by
+You can explore what this has done in an IDE. Observe that it hasn't change any of the `package.json` files yet. You can also see what has been created by
 
 * `laoban packages` - this will show you the packages in the project, their templates, and their dependencies
+
+### Fix the typescript version
+
+We want to make a new template that is like the old template, but with a different typescript version. For this we need
+to select a directory that has `package.json` already set up the way we want. We can then run
+
+* ``
+
 
 ### `laoban update`
 

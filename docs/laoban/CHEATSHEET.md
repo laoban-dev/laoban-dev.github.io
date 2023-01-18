@@ -10,10 +10,10 @@
 | `laoban update --minor` | No |Updates the version number of the packages. Usually before doing a `laoban publish`
 | `laoban update --major` | No |Updates the version number of the packages for a major release. Usually before doing a `laoban publish`
 | `laoban clean` | No | cleans up the directories and files that laoban uses as temporary storage
-| `laoban compile -asl` | details.compile | Compile all the typescript projects in the correct order
-| `laoban test -asl` | details.test | Test all the typescript projects in the correct order
-| `laoban publish -asl` | details.publish | Publishes the projects to npm
-| `laoban status -a` | No |  Show the status of important commands (compile/test) across all projects
+| `laoban compile` | details.compile | Compile all the typescript projects in the correct order
+| `laoban test` | details.test | Test all the typescript projects in the correct order
+| `laoban publish` | details.publish | Publishes the projects to npm
+| `laoban status` | No |  Show the status of important commands (compile/test) across all projects
 | `laoban run 'rm -rf node_modules'` | No | In linux remove all the node modules from the project (be careful)
 
 # Adding a new `package` to an existing `laoban` project
@@ -26,29 +26,35 @@
 | `laoban admin newpackage  --template <template>` |  the current directory is turned into a `package`. The template of the package is set to `<template>`
 | `laoban admin templates` |  shows the available templates usable in the --template option above
 
-## Notes
-
 * If the `package.details.json` already exists (i.e. it is already a new package) then you will need to add `--force` to overwrite it.
 * If the template you want to use isn't in the list give by `laoban admin templates` then you need to modify the `laoban.json` file to add it
 
-# laoban admin Cheatsheet
+# Changing a dependency in a template
 
-[laoban-admin](https://www.npmjs.com/package/@laoban/admin) is the recommended way
-to [getting started](GETTING.STARTED.md) with existing projects
+For example the version of typescript or the version of react
 
-It also holds commands for rarely used admin commands like 'clearcache' and 'profile'
+* Change the `package.json` in one package that uses the template
+* `laoban admin updateTemplate` will update the template with the new dependency
+* `laoban update` will be needed afterwards to  update the packages that use the template
+
+# Adding dependencies to all packages using a specific template
+
+* If the template is already in the local filesystem (look in the `templates` directory) then go 
+edit the package.json in there. Note that the package.json is typically tiny only including 'extras'.
+* If the template is not already in there then you need to add it first the instructions above in `Changing a dependency in a template`
+
+# Make a new template from scratch
+
+Usually we want to extend a template (for example we might just want to update a dependency as above) 
+
+* `laoban admin newtemplate` will turn the current package into a template (options can be used to change the name etc)
+* Go to the created template directory and delete the files you don't want
+* `laoban admin makeintotemplate` executed in the created template directory will update the `.template.json`  
+
+# Rarely used tasks
 
 | Command |  Purpose |
 | --- | --- |
-| `laoban admin projects` | Lists the found projects in the monorepo (with package.json files) and what is the recommended template
-| `laoban admin init --dryrun` |  Generates 'test' files that allow you to look at them before using them
-| `laoban admin init --force` |  Sets up your project with `laoban.json` and `package.details.json` that should work
-| `laoban admin newpackage` |  the current directory is turned into a `package`. Options can be used to control the template and the package name
-| `laoban admin newpackage  -p <packageName>` |  Creates a new package in the monorepo
-| `laoban admin newtemplate`  |  creates a new template with a default name from the files in the current directory placing the template under the `templates` directory (under the current directory)
-| `laoban admin newtemplate --directory <directory>`  |  creates a new template with a default name from the files in the `directory` placing the template under the `templates` directory (under the current directory)
-| `laoban admin newtemplate -t <templatename> --directory <directory> --template <templatesdirectory> ` |  creates a new template called `<templatename>` from the files in the `<directory>`, placing the template under the `templatesdirectory` directory
-| `laoban admin makeintotemplate --directory <directory> ` |  Turns the <directory> into a template
 | `laoban admin clearcache` |  Used to clear the cache of the files loaded from urls. Unless they have changed there is little value in this
 | `laoban admin profile` |  Show the time taken to do important tasks across all packages 
 

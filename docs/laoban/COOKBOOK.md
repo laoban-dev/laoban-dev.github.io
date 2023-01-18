@@ -2,16 +2,17 @@
 
 Here are some examples of how to make scripts: either adhoc with 'run' or by modifying `laoban.json`
 
-* [Execute a script if a guard is true](#guardTrue)
-* [Execute a script depending on the value of a guard](#guardValue)
-* [Execute a script which has a default of 'true'](#guardDefault)
-* [Execute a script which behaves differently on windows or linux](#guardOs)
-* [Execute a script which behaves depending on the packageManager](#packageManager)
+* [Execute a command if a guard is true](#guardTrue)
+* [Execute a command in a different directory](#differentDirectory)
+* [Execute a command depending on the value of a guard](#guardValue)
+* [Execute a command which has a default of 'true'](#guardDefault)
+* [Execute a command which behaves differently on windows or linux](#guardOs)
+* [Execute a command which behaves depending on the packageManager](#packageManager)
 * [ahdoc scripts](#adhoc)
 
 <div id="guardTrue"></div>
 
-# Execute a script if a guard is true
+# Execute a command if a guard is true
 
 For example compile
 
@@ -35,9 +36,25 @@ When I make a command like this I often also include
     }
 ```
 
+<div name="differentDirectory"></div>
+
+## A command that executes in a different directory
+
+Here we have a command that is executed in the 'dist' subdirectory of each package
+```json
+{
+  "demosRunningInADifferentDirectory": {
+    "description": "shows how to run a script in a different directory",
+    "commands":    [
+      {"command": "js:process.cwd()", "directory": "dist"}
+    ]
+  }
+}
+```
+
 <div name="guardValue"></div>
 
-# Execute a script differently depending on a guard value
+# Execute a command differently depending on a guard value
 
 This depending on the language defined in the `package.details.json` file. If the language is not defined then nothing
 will be executed
@@ -62,7 +79,7 @@ will be executed
 
 <div name="guardDefault"></div>
 
-# Execute a script with a default value
+# Execute a command with a default value
 
 For example we want to test projects unless the project has `test` set to false. Thus if it's not defined the tests will
 still run
@@ -79,7 +96,7 @@ still run
 
 <div name="guardOs"></div>
 
-# Execute a script differently on windows or linux
+# Execute a command differently on windows or linux
 
 For example we want to run a script differently on windows or linux.
 
@@ -103,7 +120,7 @@ For example we want to run a script differently on windows or linux.
 
 <div name="packageManager"></div>
 
-# Execute a script depending on the packageManager
+# Execute a command depending on the packageManager
 
 A good example here is the `npm install` command which on yarn is just `yarn`. There is no real point doing yarn in each
 package if you are using workspaces, but not everyone does.
