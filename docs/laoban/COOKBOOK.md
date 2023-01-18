@@ -36,7 +36,7 @@ When I make a command like this I often also include
     }
 ```
 
-<div name="differentDirectory"></div>
+<div id="differentDirectory"></div>
 
 ## A command that executes in a different directory
 
@@ -52,7 +52,7 @@ Here we have a command that is executed in the 'dist' subdirectory of each packa
 }
 ```
 
-<div name="guardValue"></div>
+<div id="guardValue"></div>
 
 # Execute a command differently depending on a guard value
 
@@ -77,7 +77,7 @@ will be executed
 }
 ```
 
-<div name="guardDefault"></div>
+<div id="guardDefault"></div>
 
 # Execute a command with a default value
 
@@ -94,7 +94,7 @@ still run
 }
 ```
 
-<div name="guardOs"></div>
+<div id="guardOs"></div>
 
 # Execute a command differently on windows or linux
 
@@ -118,7 +118,7 @@ For example we want to run a script differently on windows or linux.
 }
 ```
 
-<div name="packageManager"></div>
+<div id="packageManager"></div>
 
 # Execute a command depending on the packageManager
 
@@ -143,7 +143,7 @@ package if you are using workspaces, but not everyone does.
 }
 ```
 
-<div name="adhoc"></div>
+<div id="adhoc"></div>
 
 # Adhoc
 
