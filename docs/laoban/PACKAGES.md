@@ -20,6 +20,7 @@ has a [`laoban.json`](LAOBAN.JSON.md) file in it.
   }
 }
 ```
+
 | Name | Purpose
 | --- | --- |
 |[template](TEMPLATES.md) | This examples 'what type of project this is'.
