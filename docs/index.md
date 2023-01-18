@@ -11,7 +11,7 @@
 * [Documentation source](https://github.com/laoban-dev/laoban)
 * [Training materials](https://github.com/orgs/laoban-training/repositories)
 
-## What do you need to know if you are using `loaban` to manage your project?
+## What do you need to know if you are using laoban to manage your project?
 
 * [Getting starting with a project already managed by `laoban`](laoban/LAOBAN.EXISTING.md)
 * [Cheat Sheet](laoban/CHEATSHEET.md)
