@@ -34,17 +34,14 @@ laoban admin init
 Take a look at what has changed. None of the `package.json` files have been changed. You can look at the
 created files. 
 
-It is quite likely that you have the 
-
-
 ## Check for impact
 
 ```shell
 laoban admin analyze --showimpact
 ``` 
 This will show you if running `laoban update` would change your package.json. Probably it will! Unless you
-use precisely the same version of typescript as laoban... The changes are typically
-the version of typescript/react, or parts of the package.json that the default templates don't know about.
+use precisely the same version of typescript as laoban. The changes are typically
+the version of typescript/react, or parts of the package.json that the default templates doesn't know about.
 
 ## Update the template
 

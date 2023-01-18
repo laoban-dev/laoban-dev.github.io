@@ -14,7 +14,7 @@
 | `laoban test` | details.test | Test all the typescript projects in the correct order
 | `laoban publish` | details.publish | Publishes the projects to npm
 | `laoban status` | No |  Show the status of important commands (compile/test) across all projects
-| `laoban run 'rm -rf node_modules'` | No | In linux remove all the node modules from the project (be careful)
+| `laoban run 'file:rmDir(node_modules)'` | No | In linux remove all the node modules from the project (be careful)
 
 # Adding a new `package` to an existing `laoban` project
 
@@ -34,7 +34,7 @@
 For example the version of typescript or the version of react
 
 * Change the `package.json` in one package that uses the template
-* `laoban admin updateTemplate` will update the template with the new dependency
+* `laoban admin updateTemplate` running in the directory of the package will update the template with the new dependency
 * `laoban update` will be needed afterwards to  update the packages that use the template
 
 # Adding dependencies to all packages using a specific template

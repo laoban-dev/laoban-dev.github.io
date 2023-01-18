@@ -38,7 +38,8 @@ structure changes we need to maintain these scripts.
 
 ## Compiling the project with `laoban`
 
-This would just be `laoban compile`. Laoban will do the parallelism and the correct order.
+This would just be `laoban compile`. Laoban will do the parallelism and the correct order. We can't do 
+that until we have installed `laoban` and configured the project.
 
 
 ## Setting up the project with `laoban`
@@ -57,7 +58,7 @@ and we explore that below
 When the default templates are used there may be a change to package dependencies. It is important to understand what will
 happen when we do this
 ```shell
-laoban admin analyzepackages --showimpact
+laoban admin analyze --showimpact
 ```
 This produces the following
 ```json
@@ -74,24 +75,38 @@ This produces the following
 }
 ```
 
-This tells us that using the default templates will downgrade the version of typescript. For now we will accept this,
-although we will see how to solve this later.
+This tells us that using the default templates will downgrade the version of typescript.  Obviously we don't want to do
+this! We'll see how to solve this below.
 
 ### Generate the laoban files
 
-
 * `laoban admin init --force` - this will create a `laoban.details.json` file in the root of the project, and a `project.details.json` in each of the three packages
 
-You can explore what this has done in an IDE. Observe that it hasn't change any of the `package.json` files yet. You can also see what has been created by
+You can explore what this has done in an IDE. Observe that it hasn't changed any of the `package.json` files yet. 
+You can also see what has been created by executing
 
 * `laoban packages` - this will show you the packages in the project, their templates, and their dependencies
+
+Note that the `laoban admin init` command was able to detect the dependencies between the packages.
 
 ### Fix the typescript version
 
 We want to make a new template that is like the old template, but with a different typescript version. For this we need
-to select a directory that has `package.json` already set up the way we want. We can then run
+to select a directory that has `package.json` already set up the way we want. In this example we select `modules.main`. 
+We can then run
+```shell
+laoban admin updatetemplate --directory modules/main
+```
 
-* ``
+Go look at the files system: you will see that a new directory has been created under `laoban/templates/typescript`.
+In it there is a `.template.json` (a template definition) and a `package.json` (the template itself). These can be edited 
+by hand, although it is rare to modify the `.template.json` file manually.
+
+### Check for impact again
+
+```shell
+laoban admin analyze --showimpact
+```
 
 
 ### `laoban update`

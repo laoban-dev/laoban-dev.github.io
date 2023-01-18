@@ -32,6 +32,7 @@
 * [Scripts](laoban/SCRIPTS.md)
 * [Scripts Cookbook](laoban/SCRIPTS_COOKBOOK.md)
 * [Variables](laoban/VARIABLES.md)
+* [Guards](laoban/GUARDS.md)
 
 # Laoban admin documentation
 * [All Laoban admin documentation](laoban-admin/DOCUMENTATION.md)

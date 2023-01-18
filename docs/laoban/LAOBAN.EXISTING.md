@@ -45,14 +45,14 @@ Note that to have access to `laoban npm_install` your `laoban.json` should inclu
 ## Compile your code
 
 ```shell
-laoban compile -asl
+laoban compile
 ```
 This executes the `compile` command (typescript compile) in each project.
 
 ## Test your code
 
 ```shell
-laoban test -asl
+laoban test 
 ```
 
 ## Find the status of the projects
