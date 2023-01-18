@@ -34,7 +34,4 @@
 * [Variables](laoban/VARIABLES.md)
 * [Guards](laoban/GUARDS.md)
 
-# Laoban admin documentation
-* [All Laoban admin documentation](laoban-admin/DOCUMENTATION.md)
-* [Laoban admin with existing projects](laoban-admin/Existing.md)
-* [Laoban admin with greenfield projects](laoban-admin/Greenfield.md)
+

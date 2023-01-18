@@ -35,7 +35,7 @@ force us to create nice interfaces and decouple our code). Normally this is pain
 Often the files in the template will be modified by the data in the `package.details.json`
 file. For example the name of the project is needed in `pom.xml` and `project.json`.
 
-## Templates are in the `laoban.json` file
+## Templates are specified in the `laoban.json` file
 
 In the `laoban.json` file we have a `templates` section. For example:
 
