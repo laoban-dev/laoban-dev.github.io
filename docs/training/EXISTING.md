@@ -141,12 +141,3 @@ C:\git\laobantraining\convertexistingproject/modules/main       true    true
 ## Finished
 
 This simple case had the same version of typescript as the default template. We have completed the set up.
-
-
-# Making a template for a different version of typescript
-
-Clearly it's unlikely that we have the correct version of typescript, and in fact for any template that we use
-from the default templates (typescript_react for example) it's probable that we will want to use different versions.
-
-## Making a template
-
