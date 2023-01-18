@@ -80,7 +80,7 @@ this! We'll see how to solve this below.
 
 ### Generate the laoban files
 
-* `laoban admin init --force` - this will create a `laoban.details.json` file in the root of the project, and a `project.details.json` in each of the three packages
+* `laoban admin init` - this will create a `laoban.details.json` file in the root of the project, and a `project.details.json` in each of the three packages
 
 You can explore what this has done in an IDE. Observe that it hasn't changed any of the `package.json` files yet. 
 You can also see what has been created by executing
