@@ -1,6 +1,6 @@
 # Using Laoban
 
-If you are new to a project that is managed by laoban then this is a short guide to getting start. 
+If you are new to a project that is managed by laoban then this is a short guide to getting started. 
 The [cheat sheet](CHEATSHEET.md) is also very useful
 
 ## Get your code for the project

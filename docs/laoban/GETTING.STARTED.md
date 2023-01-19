@@ -14,10 +14,10 @@ npm i -g laoban
 
 [If you have issues read](INSTALLING.LAOBAN.md) 
 
-## Read the training course
+## Do the training course!
 
 If this is your first time, it helps to practice on a training project. The training project is a simple project with a
-monorepo structure. It is a good starting point for learning how to use `laoban`.
+monorepo structure. It is a good starting point for learning how to add `laoban` to your project
 
 [Details are here](../training/EXISTING.md)
 

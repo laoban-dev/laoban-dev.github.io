@@ -42,3 +42,29 @@ Note that most of these have defaults if you include the `core` in parents.
 * `throttle` sets the maximum number of parallel activities that will be executed. The default is 0 which doesn't limit
   things
 
+<div id="envVariableDefaults" /></div
+
+## Environment variable defaults
+
+Let me start with some strong advice. DO NOT STORE SECRETS IN `laoban.json` [Here is why](https://blog.gitguardian.com/secrets-credentials-api-git/).
+laoban.json goes into git, and it is a bad idea to have secrets in git. Instead, use environment variables.
+
+A lot of scripts that use secrets need an environment variable, and because of the nature of (other) configuration
+tools will often crash if the environment variable is not set. So, we have a mechanism for setting
+the DEFAULT value of environment variables. i.e. the value if not set in the environment.
+
+A good example of this is in the '.npmrc' files in the typescript templates. Their content is
+```text
+//registry.npmjs.org/:_authToken=${NPM_TOKEN}
+```
+
+This is needed if you want to publish code. BUT it will break many npm/yarn commands if the environment variable 
+is not set. To solve this we add a section to `laoban.json`. This stops the crash. [PLEASE DO NOT USE THIS FOR SETTING 
+THE SECRET](https://blog.gitguardian.com/secrets-credentials-api-git/) 
+```json
+{
+  "defaultEnv": {
+    "NPM_TOKEN": ""
+  }
+}
+```
