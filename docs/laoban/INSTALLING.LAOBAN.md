@@ -6,6 +6,7 @@ Laoban has been tested on Windows and Linux. It probably works on a Mac but I do
 ## Pre-requisites
 
 * Laoban requires [npm / node](https://docs.npmjs.com/downloading-and-installing-node-js-and-npm) to operate.
+  * [Installation instructions here](https://docs.npmjs.com/downloading-and-installing-node-js-and-npm)
   * I develop on an old version of node (v14.21.2) because I want this to work with legacy systems. 
   * I have tested it on later versions of node (v16.x) and it works fine.
 * If you are working with mono-repos `yarn` is strongly recommended over npm. 
@@ -15,7 +16,7 @@ Laoban has been tested on Windows and Linux. It probably works on a Mac but I do
 
 Laoban is a command line tool and is best installed from a command line
 
-* It is typically installed by `npm t -g laoban` or (on Linux) `sudo npm t -g laoban`
+* It is typically installed by `npm i -g laoban` or (on Linux) `sudo npm i -g laoban`
 
 ## Privileges
 It does require privileges to do this as it is adding an executable. I typically
