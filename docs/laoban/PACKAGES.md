@@ -40,14 +40,14 @@ laoban packages
 ```
 If we examine the results of this in the `laoban` project itself
 ```text
-C:\git\laoban\code\modules\debug       => @laoban/debug       (remoteTypescript)
-C:\git\laoban\code\modules\files       => @laoban/files       (typescript      ) depends on [@laoban/utils]
-C:\git\laoban\code\modules\generations => @laoban/generations (typescript      ) depends on [@laoban/debug,@laoban/utils]
-C:\git\laoban\code\modules\laoban      => laoban                 (typescript      ) depends on [@laoban/variables,@laoban/generations,@laoban/validation,@laoban/debug,@laoban/
+modules\debug       => @laoban/debug       (remoteTypescript)
+modules\files       => @laoban/files       (typescript      ) depends on [@laoban/utils]
+modules\generations => @laoban/generations (typescript      ) depends on [@laoban/debug,@laoban/utils]
+modules\laoban      => laoban                 (typescript      ) depends on [@laoban/variables,@laoban/generations,@laoban/validation,@laoban/debug,@laoban/
 files]
-C:\git\laoban\code\modules\utils       => @laoban/utils       (typescript      )
-C:\git\laoban\code\modules\validation  => @laoban/validation  (typescript      )
-C:\git\laoban\code\modules\variables   => @laoban/variables   (typescript      )
+modules\utils       => @laoban/utils       (typescript      )
+modules\validation  => @laoban/validation  (typescript      )
+modules\variables   => @laoban/variables   (typescript      )
 ```
 Each line corresponds to a packages. We can see the directory and the npm name of the packages.
 The value in (brackets) is the [template](TEMPLATES.md) of the packages

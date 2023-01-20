@@ -6,8 +6,8 @@ The purpose of this little training exercise is to go through the process of add
 
 All the source code is [here](https://github.com/laoban-training/convertexistingproject).
 
-If you clone it with `git clone https://github.com/laoban-training/convertexistingproject.git` you will get the 'starting
-state'
+If you clone it with `git clone https://github.com/laoban-training/convertexistingproject.git` you will get the '
+starting state'
 
 ## Exploring the project
 
@@ -97,14 +97,14 @@ This produces the following
 
 ```json
 {
-  "C:\\git\\laobantraining\\convertexistingproject/modules/lib1": {},
-  "C:\\git\\laobantraining\\convertexistingproject/modules/lib2": {
+  "modules/lib1": {},
+  "modules/lib2": {
     "devDependencies": {"typescript": "^4.9.4 => ^4.0.5"}
   },
-  "C:\\git\\laobantraining\\convertexistingproject/modules/lib3": {
+  "modules/lib3": {
     "devDependencies": {"typescript": "^4.9.3 => ^4.0.5"}
   },
-  "C:\\git\\laobantraining\\convertexistingproject/modules/main": {
+  "modules/main": {
     "devDependencies": {"typescript": "^4.9.4 => ^4.0.5"}
   }
 }
@@ -202,14 +202,14 @@ in `lib3`. This kind of error is common without tools like `laoban`
 
 ```json
 {
-  "C:\\git\\convertexistingproject/modules/lib1": {},
-  "C:\\git\\convertexistingproject/modules/lib2": {},
-  "C:\\git\\convertexistingproject/modules/lib3": {
+  "modules/lib1": {},
+  "modules/lib2": {},
+  "modules/lib3": {
     "devDependencies": {
       "typescript": "^4.9.3 => ^4.9.4"
     }
   },
-  "C:\\git\\convertexistingproject/modules/main": {}
+  "modules/main": {}
 }
 
 ```
@@ -239,38 +239,49 @@ laoban status
 The last command will display
 
 ```
-                                                                compile
-C:\git\laobantraining\convertexistingproject/modules/lib2       true
-C:\git\laobantraining\convertexistingproject/modules/lib3       true
-C:\git\laobantraining\convertexistingproject/modules/main       true
+                   compile
+modules/lib2       true
+modules/lib3       true
+modules/main       true
 ```
 
 So far so good! Let's continue
 
 ```shell
 laoban test
+```
+
+But wait! The last two lines says
+
+```
+modules\lib1 has an error. To view log use
+laoban log -p modules/lib1$
+```
+
+I usually run `laoban status` at times like this to see if there are other problems:
+```shell
 laoban status
 ```
-
-But wait! The `laoban status` command shows that `lib1` had a problem with its tests
-
+which gives 
 ```
-                                                                compile test
-C:\git\laobantraining\convertexistingproject/modules/lib1               false
-C:\git\laobantraining\convertexistingproject/modules/lib2       true    true
-C:\git\laobantraining\convertexistingproject/modules/lib3       true    true
-C:\git\laobantraining\convertexistingproject/modules/main       true    true
+                   compile test
+modules/lib1               false
+modules/lib2       true    true
+modules/lib3       true    true
+modules/main       true    true
 exit code 1
 ```
 
-How can we find out what is the matter in `lib1`? We can scroll in the console and look, but there is a better way.
+How can we find out what is the matter in `lib1`? We can scroll in the console and look, but there is a better way. We
+can just cut and paste the recommended command (or if we are lazy we can type `laoban log -p lib1` which works just as
+well because `lib1` is unique)
 
 ```shell
-laoban log -p lib1
+laoban log -p modules/lib1$
 ```
-We can also look at the `.session` directory. This is where `laoban` stores the output of the commands it runs.
 
-In the file for `lib1` we see
+We could also look in the `.sessions` directory. There is a directory for each script. The last one is the one we want.
+All of these show us:
 
 ```
 $ jest --config jest.config.json
@@ -280,26 +291,26 @@ Run with `--passWithNoTests` to exit with code 0
 
 Basically `lib1` has been written without any tests. We can fix this by adding a test to `lib1` or by telling laoban to
 not run tests on `lib1`. We'll do the latter. We can do this by editing the `package.details.json` file for `lib1` and
-changing the `test` property to `false`. We can then run `laoban test` again. This time we see
+changing the `test` property to `false`. We can then run `laoban test` again. This time we see no errors
 
 ```
-                                                                compile test
-C:\git\laobantraining\convertexistingproject/modules/lib1               false
-C:\git\laobantraining\convertexistingproject/modules/lib2       true    true
-C:\git\laobantraining\convertexistingproject/modules/lib3       true    true
-C:\git\laobantraining\convertexistingproject/modules/main       true    true
+                   compile test
+modules/lib1               false
+modules/lib2       true    true
+modules/lib3       true    true
+modules/main       true    true
 exit code 1
 ```
 
 What! What's going on? We've told laoban not to run tests on `lib1` but it still says that `lib1` has failed tests. The
-answer is that the status shows `the last time tests were run` and we no longer run tests in `lib1`. We can fix this by
+answer is that the status shows _the last time tests were run_ and we no longer run tests in `lib1`. We can fix this by
 running `laoban clean` and then `laoban test` again. This time we see
 
 ```
-                                                 test
-C:\git\convertexistingproject/modules/lib2       true
-C:\git\convertexistingproject/modules/lib3       true
-C:\git\convertexistingproject/modules/main       true
+                   test
+modules/lib2       true
+modules/lib3       true
+modules/main       true
 ```
 
 As you can see the `laoban status` command gives us a nice view of the 'state' of our project. It can be used in the

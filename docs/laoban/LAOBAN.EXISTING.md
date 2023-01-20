@@ -67,14 +67,14 @@ laoban status
 In the case of the `laoban` project itself it might give
 
 ```text
-                                             test  compile
-C:\git\laoban\code\modules\debug             true  true
-C:\git\laoban\code\modules\files             true  true
-C:\git\laoban\code\modules\generations       true  true
-C:\git\laoban\code\modules\laoban            true  true
-C:\git\laoban\code\modules\utils             true  true
-C:\git\laoban\code\modules\validation        true  true
-C:\git\laoban\code\modules\variables         true  true
+                          test  compile
+modules/debug             true  true
+modules/files             true  true
+modules/generations       true  true
+modules/laoban            true  true
+modules/utils             true  true
+modules/validation        true  true
+modules/variables         true  true
 ```
 
 ## Working with libaries
