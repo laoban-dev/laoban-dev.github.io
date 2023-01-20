@@ -261,8 +261,12 @@ C:\git\laobantraining\convertexistingproject/modules/main       true    true
 exit code 1
 ```
 
-How can we find out what is the matter in `lib1`? We can scroll in the console and look, but there is a better way. We
-can look at the `.session` directory. This is where `laoban` stores the output of the commands it runs.
+How can we find out what is the matter in `lib1`? We can scroll in the console and look, but there is a better way.
+
+```shell
+laoban log -p lib1
+```
+We can also look at the `.session` directory. This is where `laoban` stores the output of the commands it runs.
 
 In the file for `lib1` we see
 
@@ -314,6 +318,7 @@ laoban update                                                # updated the packa
 laoban compile
 laoban test
 laoban status                                                # showed us that we had a problem with the tests in lib1
+laoban log -p lib1
 # edit package.details.json for lib1 to set test to false
 laoban clean
 laoban test
