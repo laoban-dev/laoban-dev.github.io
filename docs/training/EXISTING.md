@@ -290,11 +290,10 @@ answer is that the status shows `the last time tests were run` and we no longer 
 running `laoban clean` and then `laoban test` again. This time we see
 
 ```
-                                                                compile test
-C:\git\laobantraining\convertexistingproject/modules/lib1               true
-C:\git\laobantraining\convertexistingproject/modules/lib2       true    true
-C:\git\laobantraining\convertexistingproject/modules/lib3       true    true
-C:\git\laobantraining\convertexistingproject/modules/main       true    true
+                                                 test
+C:\git\convertexistingproject/modules/lib2       true
+C:\git\convertexistingproject/modules/lib3       true
+C:\git\convertexistingproject/modules/main       true
 ```
 
 As you can see the `laoban status` command gives us a nice view of the 'state' of our project. It can be used in the
