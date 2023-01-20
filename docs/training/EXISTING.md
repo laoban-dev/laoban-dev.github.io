@@ -6,7 +6,7 @@ The purpose of this little training exercise is to go through the process of add
 
 All the source code is [here](https://github.com/laoban-training/convertexistingproject).
 
-If you clone it with `git clone git@github.com:laoban-training/convertexistingproject.git` you will get the 'starting
+If you clone it with `git clone https://github.com/laoban-training/convertexistingproject.git` you will get the 'starting
 state'
 
 ## Exploring the project
@@ -34,7 +34,7 @@ cd <to the project root directory>
 yarn
 ```
 
-## Compiling the project without `laoban`
+## Compiling and running the project without `laoban`
 
 This can be done with
 
@@ -45,6 +45,8 @@ cd ../lib3
 tsc --noEmit false --outDir dist
 cd ../main
 tsc --noEmit false --outDir dist
+# and now we can run it with:
+node dist/index.js
 ```
 
 If we aren't using a tool like `laoban` we need to write scripts for even the simplest of activities. For example when

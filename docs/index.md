@@ -4,13 +4,6 @@
 
 * [`npm -i -g laoban`](laoban/INSTALLING.LAOBAN.md)
 
-## Where is the code?
-
-* [NPMJS site](https://www.npmjs.com/package/laoban)
-* [Github site](https://github.com/laoban-github/laoban)
-* [Documentation source](https://github.com/laoban-dev/laoban)
-* [Training materials](https://github.com/orgs/laoban-training/repositories)
-
 ## What do you need to know if you are using laoban to manage your project?
 
 * [Getting starting with a project already managed by `laoban`](laoban/LAOBAN.EXISTING.md)
@@ -32,5 +25,12 @@
 * [Scripts Cookbook](laoban/COOKBOOK.md)
 * [Variables](laoban/VARIABLES.md)
 * [Guards](laoban/GUARDS.md)
+
+## Where is the code?
+
+* [NPMJS site](https://www.npmjs.com/package/laoban)
+* [Github site](https://github.com/laoban-github/laoban)
+* [Documentation source](https://github.com/laoban-dev/laoban)
+* [Training materials](https://github.com/orgs/laoban-training/repositories)
 
 

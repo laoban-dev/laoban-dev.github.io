@@ -8,9 +8,11 @@ Laoban has been tested on Windows and Linux. It probably works on a Mac but I do
 * Laoban requires [npm / node](https://docs.npmjs.com/downloading-and-installing-node-js-and-npm) to operate.
   * [Installation instructions here](https://docs.npmjs.com/downloading-and-installing-node-js-and-npm)
   * I develop on an old version of node (v14.21.2) because I want this to work with legacy systems. 
-  * I have tested it on later versions of node (v16.x) and it works fine.
+  * I have tested it on later versions of node (v19.x) and it works fine.
 * If you are working with mono-repos `yarn` is strongly recommended over npm. 
-  * [Installing yarn](https://classic.yarnpkg.com/lang/en/docs/install/#windows-stable)
+  * [Installing yarn instructions here](https://classic.yarnpkg.com/lang/en/docs/install/#windows-stable)
+* If you are working with typescript you will need to have typescript installed globally
+  * `npm install -g typescript`
 
 ## Installation
 
