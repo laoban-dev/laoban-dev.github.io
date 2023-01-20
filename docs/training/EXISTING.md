@@ -195,6 +195,23 @@ Note how small the `package.json` in the template is: it just holds the 'differe
 laoban admin analyze --showimpact
 ```
 
+This still shows some impact, but this is acceptable. In the past we had forgotten to update the typescript version
+in `lib3`. This kind of error is common without tools like `laoban`
+
+```json
+{
+  "C:\\git\\convertexistingproject/modules/lib1": {},
+  "C:\\git\\convertexistingproject/modules/lib2": {},
+  "C:\\git\\convertexistingproject/modules/lib3": {
+    "devDependencies": {
+      "typescript": "^4.9.3 => ^4.9.4"
+    }
+  },
+  "C:\\git\\convertexistingproject/modules/main": {}
+}
+
+```
+
 ### `laoban update`
 
 When we make changes to `package.details.json` we need to run `laoban update` to update the `package.json` files. What
@@ -206,7 +223,8 @@ file from `package.details.json` and the selected template in it
 laoban update
 ```
 
-After doing this it is a good idea to look with git and see if any 'damage' has been done.
+After doing this it is a good idea to look with git and see if any 'damage' has been done. Check the `package.json`
+files especially
 
 ### Check everything still works
 
@@ -215,7 +233,9 @@ yarn                        # should report 'no change'
 laoban compile
 laoban status              
 ```
+
 The last command will display
+
 ```
                                                                 compile
 C:\git\laobantraining\convertexistingproject/modules/lib2       true
@@ -223,12 +243,14 @@ C:\git\laobantraining\convertexistingproject/modules/lib3       true
 C:\git\laobantraining\convertexistingproject/modules/main       true
 ```
 
-So far so good! But wait! The following has an issue
+So far so good! Let's continue
 
 ```shell
 laoban test
 laoban status
 ```
+
+But wait! The `laoban status` command shows that `lib1` had a problem with its tests
 
 ```
                                                                 compile test
@@ -262,9 +284,10 @@ C:\git\laobantraining\convertexistingproject/modules/lib3       true    true
 C:\git\laobantraining\convertexistingproject/modules/main       true    true
 exit code 1
 ```
-What! What's going on? We've told laoban not to run tests on `lib1` but it still says that `lib1` has failed tests. The answer is that the status
-shows `the last time tests were run` and we no longer run tests in `lib1`. We can fix this by running `laoban clean` and
-then `laoban test` again. This time we see
+
+What! What's going on? We've told laoban not to run tests on `lib1` but it still says that `lib1` has failed tests. The
+answer is that the status shows `the last time tests were run` and we no longer run tests in `lib1`. We can fix this by
+running `laoban clean` and then `laoban test` again. This time we see
 
 ```
                                                                 compile test
@@ -274,9 +297,8 @@ C:\git\laobantraining\convertexistingproject/modules/lib3       true    true
 C:\git\laobantraining\convertexistingproject/modules/main       true    true
 ```
 
-As you can see the `laoban status` command gives us a nice view of the 'state' of our project. It can be used in the 
+As you can see the `laoban status` command gives us a nice view of the 'state' of our project. It can be used in the
 CI/CD after a build to check that everything is ok. (it returns an exit code of 1 if there was a problem)
-
 
 ### Summary
 
@@ -299,7 +321,8 @@ laoban test
 laoban status
 ```
 
-The only 'decision points' were 'what do we do about the downgraded typescript version' and 'how do we fix the tests in `lib1`'
+The only 'decision points' were 'what do we do about the downgraded typescript version' and 'how do we fix the tests
+in `lib1`'
 
 # Finished
 
