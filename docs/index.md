@@ -19,6 +19,11 @@
 * [Packages](laoban/PACKAGES.md)
 * [Templates](laoban/TEMPLATES.md)
 
+## CI/CD with laoban
+
+* [Publishing to NPM with Laoban](laoban/PUBLISHING.md)
+
+
 ## What do you need to know to write your own scripts?
 
 * [Scripts](laoban/SCRIPTS.md)
