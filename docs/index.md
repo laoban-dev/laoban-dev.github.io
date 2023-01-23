@@ -4,13 +4,14 @@
 
 * [`npm -i -g laoban`](laoban/INSTALLING.LAOBAN.md)
 
-## What do you need to know if you are using laoban to manage your project?
+## What do you need to know if you are already using laoban to manage your project?
 
 * [Getting starting with a project already managed by `laoban`](laoban/LAOBAN.EXISTING.md)
 * [Cheat Sheet](laoban/CHEATSHEET.md)
 * [Laoban and Yarn](laoban/YARN.md)
 * [Logs](laoban/LOGS.md)
 * [Command line arguments](laoban/COMMAND.LINE.ARGUMENTS.md)
+* [Adding new packages](laoban/ADDING.NEW.PACKAGES.md)
 
 ## What do you need to know to add laoban to your project?
 
