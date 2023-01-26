@@ -4,7 +4,7 @@
 
 * [`npm -i -g laoban`](laoban/INSTALLING.LAOBAN.md)
 
-## What do you need to know if you are already using laoban to manage your project?
+## Getting starting when you have an existing project already using laoban
 
 * [Getting starting with a project already managed by `laoban`](laoban/LAOBAN.EXISTING.md)
 * [Cheat Sheet](laoban/CHEATSHEET.md)
@@ -13,7 +13,7 @@
 * [Command line arguments](laoban/COMMAND.LINE.ARGUMENTS.md)
 * [Adding new packages](laoban/ADDING.NEW.PACKAGES.md)
 
-## What do you need to know to add laoban to your project?
+## Adding laoban to an existing project
 
 * [Getting starting by adding `laoban` to your project](laoban/GETTING.STARTED.md) -- [Training course](training/EXISTING.md)
 * [laoban.json](laoban/LAOBAN.JSON.md)
@@ -24,13 +24,17 @@
 
 * [Publishing to NPM with Laoban](laoban/PUBLISHING.md)
 
-
-## What do you need to know to write your own scripts?
+## Writing your own scripts
 
 * [Scripts](laoban/SCRIPTS.md)
 * [Scripts Cookbook](laoban/COOKBOOK.md)
 * [Variables](laoban/VARIABLES.md)
 * [Guards](laoban/GUARDS.md)
+
+## Writing your own templates
+
+* [Templates](laoban/TEMPLATES.md)
+* [Making templates](laoban/MAKING.TEMPLATES.md)
 
 ## Where is the code?
 

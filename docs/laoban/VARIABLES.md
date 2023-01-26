@@ -32,7 +32,7 @@ On my windows machine this gives the following
     "template": "typescript",
     "name": "@laoban/variables",
     "description": "A library that can dereference ${xxx} in strings",
-    "details": {
+    "guards": {
       "publish": true
     }
   }

@@ -54,6 +54,8 @@ In the `laoban.json` file we have a `templates` section. For example:
   for `https://raw.githubusercontent.com/phil-rice/laoban/master/common`
 * The third is also a url
 
+<div id="templateControlFile"></div>
+
 ### The file `.template.json`
 
 The url specified in the `templates` section of `laoban.json` has 'template.json' appended to it. There should be a file

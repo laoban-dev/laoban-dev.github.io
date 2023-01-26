@@ -22,7 +22,7 @@ guard. The example of ls-ports here:
 {
   "ls-ports": {
     "description": "lists the projects that have a port defined in package.details.json",
-    "guard":       "${projectDetails.details.port}",
+    "guard":       "${projectDetails.guards.port}",
     "commands":    ["js:process.cwd()"]
   }
 }
@@ -34,9 +34,9 @@ Another good example is
     {
   "start": {
     "description": "${packageManager} start for all projects that have a port defined in package.details.json",
-    "guard":       "${projectDetails.details.port}",
+    "guard":       "${projectDetails.guards.port}",
     "commands":    ["${packageManager} start"],
-    "env":         {"PORT": "${projectDetails.details.port}"}
+    "env":         {"PORT": "${projectDetails.guards.port}"}
   }
 }
 ```
@@ -59,11 +59,11 @@ java
     "commands":    [
       {
         "name":  "compile", "command": "tsc", "status": true,
-        "guard": {"value": "${packageDetails.details.language}", "equals": "typescript"}
+        "guard": {"value": "${packageDetails.guards.language}", "equals": "typescript"}
       },
       {
         "name":  "compile", "command": "mvn compile", "status": true,
-        "guard": {"value": "${packageDetails.details.language}", "equals": "java"}
+        "guard": {"value": "${packageDetails.guards.language}", "equals": "java"}
       }
     ]
   }
@@ -80,7 +80,7 @@ a `details.language` defined
 ```json
 {
   "listProjectsWithALangugeSet": {
-    "command": "echo ${packageDirectory}", "guard": "${packageDetails.details.language}"
+    "command": "echo ${packageDirectory}", "guard": "${packageDetails.guards.language}"
   }
 }
 ```
@@ -94,7 +94,7 @@ else
 {
   "listProjectsWithALangugeSet": {
     "description": "lists all the projects which have a language defined in the package.details.json file",
-    "command": "echo ${packageDirectory}", "guard": {"value": "${packageDetails.details.language}"}
+    "command": "echo ${packageDirectory}", "guard": {"value": "${packageDetails.guards.language}"}
   }
 }
 ```
@@ -109,7 +109,7 @@ true. This example shows how we can do that
   "defaultTrueGuard": {
     "description": "lists all the projects unless the guard is set to false",
     "commands":    ["js:process.cwd()"],
-    "guard":       {"value": "${packageDetails.details.guard}", "default": true}
+    "guard":       {"value": "${packageDetails.guards.guard}", "default": true}
   }
 }
 ```
@@ -124,7 +124,7 @@ Suppose we want to do something if a project has value 'A' in it's `package.deta
     "description": "lists all the projects with the guardValue is set to A",
     "commands":    ["js:process.cwd()"],
     "guard":       {
-      "value": "${packageDetails.details.valueGuard}", "equals": "A"
+      "value": "${packageDetails.guards.valueGuard}", "equals": "A"
     }
   }
 }

@@ -60,13 +60,12 @@ If you have a different structure you need to make a new template and modify the
 
 # Enable publishing in the `package.details.json` file
 
-Each package has a `package.details.json` file. In the details section there is a `publish` value that is set to false.
-In order to
-publish you need to set this to true
+Each package has a `package.details.json` file. In the guards section there is a `publish` value that is set to false.
+In order to publish you need to set this to true
 
 ```json
 {
-  "details": {
+  "guards": {
     "publish": true
   }
 }

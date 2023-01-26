@@ -15,3 +15,11 @@ You can call it
 This command will create a `package.details.json` file in the directory you specify. It will use information from
 a `package.json` file if that exists to work out things like names/descriptions/links and the template to use
 
+# Examples
+
+```shell
+laoban admin newpackage                        # creates a package.details.json in the current directory
+laoban admin newpackage modules\mynewpackage   # creates a package.details.json in the modules\mynewpackage directory
+laoban admin newpackage --template javascript  # creates a package.details.json in the current directory using the javascript template
+```
+
