@@ -13,6 +13,12 @@ has a [`laoban.json`](LAOBAN.JSON.md) file in it.
   "links":       [
     "@laoban/variables", "@laoban/generations", "@laoban/validation", "@laoban/debug", "@laoban/files"
   ],
+  "packageJson": {
+    "dependencies": {
+      "xlsx": "^0.18.5"
+    },
+    "devDependencies": {}
+  },
   "guards":      {
     "compile": true,
     "test":    true,
@@ -27,7 +33,9 @@ has a [`laoban.json`](LAOBAN.JSON.md) file in it.
 | name                           | The name of the project. This is the value that the project would be published to in `npmjs` |
 | description                    | Human readable description of the project.                                                   |
 | [details.links](#dependencies) | This is how we express 'This project depends on other projects'                              |
-| details.compile/test/publish   | These control if commands are executed in this project                                       |
+| details.compile/test/publish   | These control if commands are executed in this project <br/>                                     |
+| packageJson.dependencies       | These are the dependencies that will be added to the `package.json` file                      |
+| packageJson.devDependencies    | These are the devDependencies that will be added to the `package.json` file  
 
 ## Project details file and variables
 
