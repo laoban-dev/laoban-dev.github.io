@@ -58,6 +58,8 @@ Arbitrary javascript commands can be executed. For example `"js:process.cwd()"`
 Since Windows and linux have different ways of deleting files, we can use a file command to delete a file.
 The same is true to view a file. 
 
+Example `laoban run rmDir(dist)` will delete the dist directory in each project
+
 | Command                 | Purpose
 |-------------------------| ---
 | file:rm(<filename>)     | Deletes a file
