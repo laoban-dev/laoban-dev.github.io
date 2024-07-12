@@ -58,12 +58,12 @@ Arbitrary javascript commands can be executed. For example `"js:process.cwd()"`
 Since Windows and linux have different ways of deleting files, we can use a file command to delete a file.
 The same is true to view a file. 
 
-| Command | Purpose
-| ----------| ---
-| file:rm(<filename>) | Deletes a file
+| Command                 | Purpose
+|-------------------------| ---
+| file:rm(<filename>)     | Deletes a file
 | file:rmDir(<directory>) | Deletes a directory
-| file: rmLog | Deletes the log file (is special because logs are in use by laoban). Only really used by the `clean` command
-| file:cat(<filename>) | Displays the contents of a file
+| file: rmLog             | Deletes the log file (is special because logs are in use by laoban). Only really used by the `clean` command
+| file:cat(<filename>)    | Displays the contents of a file
 | file:tail(<filename>,n) | Displays the last n lines of a file
 
 ## Types of commands
